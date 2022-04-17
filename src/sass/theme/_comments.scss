@@ -1,0 +1,65 @@
+#wrapper-comments {
+    position: relative;
+
+    .comments-title {
+        font-size: $font-size-lg;
+    }
+
+    .wrapper-comment-inner {
+        position: relative;
+        display: flex;
+    
+        .comment-avatar {
+            margin-right: $comments-avatar-margin-x;
+        
+            img {
+                width: $comments-avatar-size;
+                height: $comments-avatar-size;
+                border-radius: $border-radius-pill;
+            }
+        }
+
+        .comment-date, .comment-reply {
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    .children {
+        >.comment {
+            padding-left: $comments-children-padding-x;
+        }
+    }
+}
+
+#comment-nav {
+    position: relative;
+
+    .comment-navigation-content {
+        position: relative;
+        display: flex;
+
+        .nav-next {
+            margin-left: auto;
+        }
+    }
+}
+
+#wrapper-comment-form {
+    position: relative;
+
+    .comment-form-title {
+        font-size: $font-size-lg;
+    }
+    
+    .comment-form-textarea {
+        textarea {
+            min-height: 120px;
+        }
+    }
+
+    .comment-form-reply, .must-log-in, .logged-as-in {
+        a {
+            font-weight: $font-weight-bold;
+        }
+    }
+}

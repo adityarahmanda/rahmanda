@@ -1,0 +1,25 @@
+.navbar-brand {
+    font-weight: $font-weight-bolder;
+    color: $gray-700;
+}
+
+.navbar-nav {
+    .nav-item {
+        .nav-link {
+            text-decoration: underline;
+            color: $navbar-nav-link-color;
+        }
+
+        &:first-child {
+            .nav-link {
+                padding-left: 0;
+            }
+        }
+
+        &:last-child {
+            .nav-link {
+                padding-right: 0;
+            }
+        }
+    }
+}

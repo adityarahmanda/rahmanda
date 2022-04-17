@@ -1,0 +1,14 @@
+#wrapper-footer {
+    .site-footer {
+        display: flex;
+        justify-content: space-between;
+
+        .site-info {
+            display: flex;
+    
+            span {
+                align-self: flex-end;
+            }
+        }
+    }
+}
