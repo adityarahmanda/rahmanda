@@ -8,7 +8,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! function_exists( 'understrap_pagination' ) ) {
+if ( ! function_exists( 'rahmanda_pagination' ) ) {
 	/**
 	 * Displays the navigation to next/previous set of posts.
 	 *
@@ -39,7 +39,7 @@ if ( ! function_exists( 'understrap_pagination' ) ) {
 	 * }
 	 * @param string       $class           (Optional) Classes to be added to the <ul> element. Default 'pagination'.
 	 */
-	function understrap_pagination( $args = array(), $class = 'pagination' ) {
+	function rahmanda_pagination( $args = array(), $class = 'pagination' ) {
 
 		if ( ! isset( $args['total'] ) && $GLOBALS['wp_query']->max_num_pages <= 1 ) {
 			return;
@@ -50,11 +50,11 @@ if ( ! function_exists( 'understrap_pagination' ) ) {
 			array(
 				'mid_size'           => 2,
 				'prev_next'          => true,
-				'prev_text'          => __( '&laquo;', 'understrap' ),
-				'next_text'          => __( '&raquo;', 'understrap' ),
+				'prev_text'          => __( '&laquo;', 'rahmanda' ),
+				'next_text'          => __( '&raquo;', 'rahmanda' ),
 				'type'               => 'array',
 				'current'            => max( 1, get_query_var( 'paged' ) ),
-				'screen_reader_text' => __( 'Posts navigation', 'understrap' ),
+				'screen_reader_text' => __( 'Posts navigation', 'rahmanda' ),
 			)
 		);
 

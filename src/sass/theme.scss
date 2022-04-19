@@ -6,8 +6,10 @@
 @import "theme/contact-form7";    // <-------- Contact Form 7 - Bootstrap 5 support
 
 // Optional files - If you dont use the corresponding scripts/fonts comment em out
-@import "assets/fontawesome/font-awesome";    // <-------- Font Awesome Icon font
+@import "assets/fontawesome/fontawesome";    // <-------- Font Awesome 6 Icon font
+@import "assets/fontawesome/solid";    // <-------- Font Awesome 6 Icon font
+@import "assets/fontawesome/regular";    // <-------- Font Awesome 6 Icon font
+@import "assets/fontawesome/brands";    // <-------- Font Awesome 6 Icon font
 
 // Any additional imported files //
 @import "theme/theme";            // <-------- That's where you can add your own design. Thats your part!
-

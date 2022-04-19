@@ -6,27 +6,42 @@
  * @package Rahmanda
  */
 
-add_action( 'init', 'understrap_child_popular_posts_block' );
+add_action( 'init', 'rahmanda_popular_posts_block' );
 
-function understrap_child_popular_posts_block()
+function rahmanda_popular_posts_block()
 {
-	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-	$popular_posts_block_script = "/js/popular-posts-block{$suffix}.js";
-
-    wp_register_script( 
-         'popular-posts-js', 
-         get_template_directory_uri() . $popular_posts_block_script, 
-         array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-i18n' )
-    );
-
-    register_block_type( 'understrap/popular-posts', array(
+    register_block_type( 'rahmanda/popular-posts', array(
         'editor_script' => 'popular-posts-js',
-        'render_callback' => 'understrap_child_popular_posts_render_callback'
+        'render_callback' => 'rahmanda_child_popular_posts_render_callback'
     ));
 }
 
+
+add_action( 'enqueue_block_editor_assets', 'rahmanda_enqueue_popular_posts_block_script' );
+
+if ( ! function_exists( 'rahmanda_enqueue_popular_posts_block_script' ) ) {
+	/**
+	 * Enqueue popular post block script
+	 */
+	function rahmanda_enqueue_popular_posts_block_script() {
+		$the_theme         = wp_get_theme();
+		$theme_version     = $the_theme->get( 'Version' );
+		$suffix            = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+		$js_script = "/js/popular-posts-block{$suffix}.js";
+		$js_version = $theme_version . '.' . filemtime( get_template_directory() . $js_script );
+		
+		wp_enqueue_script( 
+			'popular-posts-js', 
+			get_template_directory_uri() . $js_script, 
+			array( 'wp-element', 'wp-blocks', 'wp-block-editor', 'wp-i18n' ), 
+			$js_version, 
+			true 
+		);
+	}
+}
+
 // Optional: Moved render callback to separate function to keep logic clear
-function understrap_child_popular_posts_render_callback($attributes, $content){
+function rahmanda_child_popular_posts_render_callback($attributes, $content){
     $numOfPosts = $attributes['numOfPosts'] ? $attributes['numOfPosts'] : 4;
 
   	$args = array(
@@ -52,7 +67,7 @@ function understrap_child_popular_posts_render_callback($attributes, $content){
 
 	    $html .= '</ul>';
     } else {
-        $html .= esc_html_e( 'Tak ada postingan', 'understrap' );
+        $html .= esc_html_e( 'Tak ada postingan', 'rahmanda' );
     }
 
     return $html;

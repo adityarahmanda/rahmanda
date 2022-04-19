@@ -1,30 +1,24 @@
-=== Understrap ===
+# Rahmanda
 Contributors: Aditya Rahmanda
 Tags: two-columns, right-sidebar, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, translation-ready
 Requires at least: 5.0
 Tested up to: 5.7.2
 Requires PHP: 5.2
 
-== Description ==
+## Description
 
 A Portofolio Wordpress theme which is made on based on Understrap.
 
 Website: [https://adityarahmanda.com/kerjaan/rahmanda](https://adityarahmanda.com/kerjaan/rahmanda)
 
-== Installation ==
+## Installation
 
-1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Understrap in the search form and press the 'Enter' key on your keyboard.
-3. Click on the 'Activate' button to use your new theme right away.
-4. Do not edit the theme files directly. We recommend creating a child theme for custom development. Full developer documentation: [https://docs.understrap.com/](https://docs.understrap.com/)
+1. Download this project into .zip.
+2. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+3. Upload this the zip file and start installing.
+4. Click on the 'Activate' button to use your new theme right away.
 
-== Privacy ==
-
-
-== Changelog ==
-
-
-== Copyright ==
+## Copyright
 
 This theme bundles the following third-party resources:
 

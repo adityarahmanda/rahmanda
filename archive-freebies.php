@@ -57,7 +57,7 @@ get_header();
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
+			<?php rahmanda_pagination(); ?>
 
 		</div><!-- .row -->
 

@@ -8,9 +8,9 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$enable_featured_works = get_theme_mod( 'understrap_front_page_enable_featured_works' );
+$enable_featured_work = get_theme_mod( 'rahmanda_front_page_enable_featured_work' );
 
-if(!$enable_featured_works) {
+if(!$enable_featured_work) {
     return;
 }
 ?>
@@ -23,13 +23,17 @@ if(!$enable_featured_works) {
             
             <div class="col-md content-area">    
                 
-                <div class="featured-works-main">
+                <div class="featured-work-main">
                     
-                    <h2 class="featured-works-title mb-4">
-                        
-                        <?php echo esc_html__('Kerjaan Unggulan', 'understrap'); ?>
+					<div class="featured-work-header">
 
-                    </h2>
+                        <h2 class="featured-work-title">
+                            
+                            <?php echo esc_html__('Kerjaan Unggulan', 'rahmanda'); ?>
+
+                        </h2>
+                    
+                    </div>
 
                     <?php
                         $args = array(
@@ -63,7 +67,7 @@ if(!$enable_featured_works) {
 						
 						<a href="<?php echo get_post_type_archive_link( 'work' ); ?>">
                         
-							<?php echo esc_html__("Intip Kerjaan Lain", 'understrap'); ?>
+							<?php echo esc_html__("Intip Kerjaan Lain", 'rahmanda'); ?>
                         
 						</a>
 

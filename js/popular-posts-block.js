@@ -15,9 +15,10 @@
     var TextControl = wp.components.TextControl; // const { serverSideRender: ServerSideRender } = wp;
 
     var __ = wp.i18n.__;
-    registerBlockType('understrap/popular-posts', {
-      title: __('Popular Posts', 'understrap'),
-      description: __('A widget to show the most popular post on the site', 'understrap'),
+    registerBlockType('rahmanda/popular-posts', {
+      apiVersion: 2,
+      title: __('Postingan Populer', 'rahmanda'),
+      description: __('Widget untuk menampilkan daftar postingan populer', 'rahmanda'),
       icon: 'feedback',
       category: 'widgets',
       // custom attributes
@@ -39,14 +40,14 @@
         }
 
         return /*#__PURE__*/React.createElement(TextControl, {
-          label: "Number of Posts",
+          label: "Jumlah Postingan",
           type: "number",
           value: attributes.numOfPosts,
           onChange: onChangeInput
         });
       },
       save: function save(props) {
-        return /*#__PURE__*/React.createElement("div", useBlockProps.save(), "Popular Post Block Content");
+        return /*#__PURE__*/React.createElement("div", useBlockProps.save(), __('Memuat Postingan Populer...', 'rahmanda'));
       }
     });
 

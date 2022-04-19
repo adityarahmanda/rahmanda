@@ -129,9 +129,10 @@
 .widget_block {
     ul {
         @include list-unstyled;
+        margin-bottom: 0;
     
         li {
-            list-style-type: '\2014\a0'; 
+            list-style-type: '\2014'; 
             padding-inline-start: 1ch;
             margin-bottom: $spacer * .5;
         }
@@ -157,20 +158,13 @@
     }
 }
 
-.wp-block-social-links {
-    margin-bottom: 0;
-
-    .wp-block-social-link {
-        display: block;
-        border-radius: 0;
-        background-color: transparent !important;
-        color: $gray-700 !important;
-        padding-inline-start: 0;
-        margin-right: $list-inline-padding;
-        margin-bottom: 0;
-
-        a {
-            padding: 0;
+@include media-breakpoint-down(md) {
+    .widget_block {
+        ul {
+            li {
+                list-style-type: none; 
+                padding-inline-start: 0;
+            }
         }
     }
 }

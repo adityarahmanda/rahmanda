@@ -180,7 +180,7 @@
       icon: ""
     }];
 
-    var labelHeading = __('Tautan', 'understrap');
+    var labelHeading = __('Tautan', 'rahmanda');
 
     var labelSeparator = ' - ';
 
@@ -243,28 +243,28 @@
     }, [externalLinks]);
     return /*#__PURE__*/React.createElement(PluginDocumentSettingPanel, {
       name: "external-links",
-      title: __('Tautan Luar', 'understrap')
+      title: __('Tautan Luar', 'rahmanda')
     }, externalLinks.map(function (externalLink, index) {
       return /*#__PURE__*/React.createElement(Spacer, {
         marginBottom: "6"
       }, /*#__PURE__*/React.createElement(Heading, {
         level: "3"
       }, externalLink.label === "" ? labelHeading : labelHeading + labelSeparator + externalLink.label), /*#__PURE__*/React.createElement(TextControl, {
-        label: __('Label', 'understrap'),
+        label: __('Label', 'rahmanda'),
         value: externalLink.label,
         onChange: function onChange(value) {
           return onLabelChange(index, value);
         }
       }), /*#__PURE__*/React.createElement(TextControl, {
-        label: __('URL', 'understrap'),
+        label: __('URL', 'rahmanda'),
         value: externalLink.url,
         onChange: function onChange(value) {
           return onURLChange(index, value);
         }
       }), /*#__PURE__*/React.createElement(TextControl, {
-        label: __('Ikon', 'understrap'),
+        label: __('Ikon', 'rahmanda'),
         value: externalLink.icon,
-        help: __("Ikon yang digunakan merupakan ikon-ikon dari Font Awesome, format penulisan 'fa-{nama-icon}'", 'understrap'),
+        help: __("Ikon yang digunakan merupakan ikon-ikon dari Font Awesome, format penulisan 'fa{b|r|s} fa-{nama-icon}'", 'rahmanda'),
         onChange: function onChange(value) {
           return onIconChange(index, value);
         }
@@ -273,11 +273,11 @@
         onClick: function onClick() {
           return onDeleteExternalLinkButtonClick(index);
         }
-      }, __('Hapus Tautan', 'understrap')));
+      }, __('Hapus Tautan', 'rahmanda')));
     }), /*#__PURE__*/React.createElement(Button, {
       variant: "secondary",
       onClick: onAddExternalLinkButtonClick
-    }, __('Tambah Tautan', 'understrap')));
+    }, __('Tambah Tautan', 'rahmanda')));
   };
 
   if (window.pagenow === 'work') {

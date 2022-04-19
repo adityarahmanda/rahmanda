@@ -13,8 +13,8 @@
             margin-right: $comments-avatar-margin-x;
         
             img {
-                width: $comments-avatar-size;
-                height: $comments-avatar-size;
+                max-width: $comments-avatar-size;
+                max-height: $comments-avatar-size;
                 border-radius: $border-radius-pill;
             }
         }
@@ -60,6 +60,20 @@
     .comment-form-reply, .must-log-in, .logged-as-in {
         a {
             font-weight: $font-weight-bold;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    #wrapper-comments {
+        .comments-title {
+            font-size: $font-size-base;
+        }
+    }
+
+    #wrapper-comment-form {
+        .comment-form-title {
+            font-size: $font-size-base;
         }
     }
 }

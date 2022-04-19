@@ -8,12 +8,12 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! function_exists( 'understrap_setup_theme_default_settings' ) ) {
+if ( ! function_exists( 'rahmanda_setup_theme_default_settings' ) ) {
 	/**
 	 * Store default theme settings in database.
 	 */
-	function understrap_setup_theme_default_settings() {
-		$defaults = understrap_get_theme_default_settings();
+	function rahmanda_setup_theme_default_settings() {
+		$defaults = rahmanda_get_theme_default_settings();
 		$settings = get_theme_mods();
 		foreach ( $defaults as $setting_id => $default_value ) {
 			// Check if setting is set, if not set it to its default value.
@@ -24,17 +24,17 @@ if ( ! function_exists( 'understrap_setup_theme_default_settings' ) ) {
 	}
 }
 
-if ( ! function_exists( 'understrap_get_theme_default_settings' ) ) {
+if ( ! function_exists( 'rahmanda_get_theme_default_settings' ) ) {
 	/**
 	 * Retrieve default theme settings.
 	 *
 	 * @return array
 	 */
-	function understrap_get_theme_default_settings() {
+	function rahmanda_get_theme_default_settings() {
 		$defaults = array(
-			'understrap_posts_index_style' => 'default',   // Latest blog posts style.
-			'understrap_sidebar_position'  => 'right',     // Sidebar position.
-			'understrap_container_type'    => 'container', // Container width.
+			'rahmanda_posts_index_style' => 'default',   // Latest blog posts style.
+			'rahmanda_sidebar_position'  => 'right',     // Sidebar position.
+			'rahmanda_container_type'    => 'container', // Container width.
 		);
 
 		/**
@@ -42,6 +42,6 @@ if ( ! function_exists( 'understrap_get_theme_default_settings' ) ) {
 		 *
 		 * @param array $defaults Array of default theme settings.
 		 */
-		return apply_filters( 'understrap_theme_default_settings', $defaults );
+		return apply_filters( 'rahmanda_theme_default_settings', $defaults );
 	}
 }

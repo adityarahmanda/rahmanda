@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<header class="page-header">
 
-		<h1 class="page-title"><?php esc_html_e( 'Nihil', 'understrap' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nihil', 'rahmanda' ); ?></h1>
 
 	</header><!-- .page-header -->
 
@@ -28,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
             $kses = array( 'a' => array( 'href' => array() ) );
             printf(
                 /* translators: 1: Link to WP admin new post page. */
-                '<p>' . wp_kses( __( 'Sepertinya kerjaan lagi kosong nih? <a href="%1$s">Mulai pos kerjaan di sini</a>.', 'understrap' ), $kses ) . '</p>',
+                '<p>' . wp_kses( __( 'Sepertinya kerjaan lagi kosong nih? <a href="%1$s">Mulai pos kerjaan di sini</a>.', 'rahmanda' ), $kses ) . '</p>',
                 esc_url( admin_url( 'post-new.php?post_type=works' ) )
             );
 
@@ -36,7 +36,7 @@ defined( 'ABSPATH' ) || exit;
 
 			printf(
 				'<p>%s<p>',
-				esc_html__( 'Maaf, sepertinya kerjaan lagi kosong nih.', 'understrap' )
+				esc_html__( 'Maaf, sepertinya kerjaan lagi kosong nih.', 'rahmanda' )
 			);
 
         endif;

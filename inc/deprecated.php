@@ -8,7 +8,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! function_exists( 'understrap_adjust_body_class' ) ) {
+if ( ! function_exists( 'rahmanda_adjust_body_class' ) ) {
 	/**
 	 * Setup body classes.
 	 *
@@ -17,7 +17,7 @@ if ( ! function_exists( 'understrap_adjust_body_class' ) ) {
 	 * @deprecated 0.9.4 Styling of tag has been removed in Bootstrap v4 Alpha 6.
 	 * @link https://github.com/twbs/bootstrap/issues/20939
 	 */
-	function understrap_adjust_body_class( $classes ) {
+	function rahmanda_adjust_body_class( $classes ) {
 
 		foreach ( $classes as $key => $value ) {
 			if ( 'tag' == $value ) {
@@ -30,7 +30,7 @@ if ( ! function_exists( 'understrap_adjust_body_class' ) ) {
 	}
 }
 
-if ( ! function_exists( 'understrap_slbd_count_widgets' ) ) {
+if ( ! function_exists( 'rahmanda_slbd_count_widgets' ) ) {
 	/**
 	 * Count number of widgets in a sidebar
 	 * Used to add classes to widget areas so widgets can be displayed one, two, three or four per row
@@ -38,7 +38,7 @@ if ( ! function_exists( 'understrap_slbd_count_widgets' ) ) {
 	 * @param int $sidebar_id The ID of the sidebar.
 	 * @deprecated 0.8.9
 	 */
-	function understrap_slbd_count_widgets( $sidebar_id ) {
+	function rahmanda_slbd_count_widgets( $sidebar_id ) {
 		// If loading from front page, consult $_wp_sidebars_widgets rather than options
 		// to see if wp_convert_widget_settings() has made manipulations in memory.
 		global $_wp_sidebars_widgets;
@@ -77,14 +77,14 @@ if ( ! function_exists( 'understrap_slbd_count_widgets' ) ) {
  */
 function deprecated_translations() {
 	array(
-		__( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'understrap' ),
-		__( 'Previous', 'understrap' ),
-		__( 'Next', 'understrap' ),
-		__( 'About:', 'understrap' ),
-		__( 'Profile', 'understrap' ),
-		__( 'Posts by', 'understrap' ),
-		__( 'Permanent Link:', 'understrap' ),
-		__( 'in', 'understrap' ),
-		__( 'Edit', 'understrap' ),
+		__( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'rahmanda' ),
+		__( 'Previous', 'rahmanda' ),
+		__( 'Next', 'rahmanda' ),
+		__( 'About:', 'rahmanda' ),
+		__( 'Profile', 'rahmanda' ),
+		__( 'Posts by', 'rahmanda' ),
+		__( 'Permanent Link:', 'rahmanda' ),
+		__( 'in', 'rahmanda' ),
+		__( 'Edit', 'rahmanda' ),
 	);
 }

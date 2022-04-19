@@ -15,14 +15,14 @@ defined( 'ABSPATH' ) || exit;
 
 	<header class="page-header">
 
-		<h1 class="page-title"><?php esc_html_e( 'Nihil', 'understrap' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nihil', 'rahmanda' ); ?></h1>
 
 	</header><!-- .page-header -->
 
 	<div class="page-content">
 
         <p>
-            <?php echo esc_html__( 'Maaf, sepertinya kerjaan lagi kosong nih.', 'understrap' ); ?>
+            <?php echo esc_html__( 'Maaf, sepertinya kerjaan lagi kosong nih.', 'rahmanda' ); ?>
         </p>
 
 	</div><!-- .page-content -->

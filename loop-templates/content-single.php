@@ -19,17 +19,17 @@ defined( 'ABSPATH' ) || exit;
 
 	<header class="entry-header">
 
-		<div class="entry-categories mb-3" >
+		<div class="entry-categories mb-2 mb-md-3" >
 			
-			<?php echo the_category(); ?>
+			<?php the_category(); ?>
 
 		</div>
 
-		<?php the_title( '<h1 class="entry-title mb-3">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title mb-2 mb-md-3">', '</h1>' ); ?>
 
 		<div class="entry-meta">
 
-			<?php understrap_posted_on(); ?>
+			<?php rahmanda_posted_on(); ?>
 
 		</div><!-- .entry-meta -->
 

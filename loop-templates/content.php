@@ -22,11 +22,11 @@ defined( 'ABSPATH' ) || exit;
 
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-excerpt">
 
 		<?php 
 		the_excerpt(); 
-		understrap_more_link();
+		rahmanda_more_link();
 		?>
 
 	</div><!-- .entry-content -->

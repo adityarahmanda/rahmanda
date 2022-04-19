@@ -14,9 +14,9 @@ defined( 'ABSPATH' ) || exit;
  *
  * @link https://developer.wordpress.org/reference/hooks/dynamic_sidebar_params/
  */
-add_filter( 'dynamic_sidebar_params', 'understrap_widget_classes' );
+add_filter( 'dynamic_sidebar_params', 'rahmanda_widget_classes' );
 
-if ( ! function_exists( 'understrap_widget_classes' ) ) {
+if ( ! function_exists( 'rahmanda_widget_classes' ) ) {
 
 	/**
 	 * Count number of visible widgets in a sidebar and add classes to widgets accordingly,
@@ -49,7 +49,7 @@ if ( ! function_exists( 'understrap_widget_classes' ) ) {
 	 * }
 	 * @return array $params
 	 */
-	function understrap_widget_classes( $params ) {
+	function rahmanda_widget_classes( $params ) {
 
 		global $sidebars_widgets;
 
@@ -89,20 +89,20 @@ if ( ! function_exists( 'understrap_widget_classes' ) ) {
 		return $params;
 
 	}
-} // End of if function_exists( 'understrap_widget_classes' ).
+} // End of if function_exists( 'rahmanda_widget_classes' ).
 
-add_action( 'widgets_init', 'understrap_widgets_init' );
+add_action( 'widgets_init', 'rahmanda_widgets_init' );
 
-if ( ! function_exists( 'understrap_widgets_init' ) ) {
+if ( ! function_exists( 'rahmanda_widgets_init' ) ) {
 	/**
 	 * Initializes themes widgets.
 	 */
-	function understrap_widgets_init() {
+	function rahmanda_widgets_init() {
 		register_sidebar(
 			array(
-				'name'          => __( 'Hero Canvas', 'understrap' ),
+				'name'          => __( 'Hero Canvas', 'rahmanda' ),
 				'id'            => 'herocanvas',
-				'description'   => __( 'Full size canvas hero area for Bootstrap and other custom HTML markup', 'understrap' ),
+				'description'   => __( 'Full size canvas hero area for Bootstrap and other custom HTML markup', 'rahmanda' ),
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
 				'before_title'  => '',
@@ -112,9 +112,9 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 
 		register_sidebar(
 			array(
-				'name'          => __( 'About Canvas', 'understrap' ),
+				'name'          => __( 'About Canvas', 'rahmanda' ),
 				'id'            => 'aboutcanvas',
-				'description'   => __( 'Full size canvas about area for Bootstrap and other custom HTML markup', 'understrap' ),
+				'description'   => __( 'Full size canvas about area for Bootstrap and other custom HTML markup', 'rahmanda' ),
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
 				'before_title'  => '',
@@ -124,9 +124,9 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 
 		register_sidebar(
 			array(
-				'name'          => __( 'Right Sidebar', 'understrap' ),
+				'name'          => __( 'Right Sidebar', 'rahmanda' ),
 				'id'            => 'right-sidebar',
-				'description'   => __( 'Right sidebar widget area', 'understrap' ),
+				'description'   => __( 'Right sidebar widget area', 'rahmanda' ),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</aside>',
 				'before_title'  => '<h3 class="widget-title">',
@@ -136,9 +136,9 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 
 		register_sidebar(
 			array(
-				'name'          => __( 'Single Footer', 'understrap' ),
+				'name'          => __( 'Single Footer', 'rahmanda' ),
 				'id'            => 'single-footer',
-				'description'   => __( 'Single footer widget area', 'understrap' ),
+				'description'   => __( 'Single footer widget area', 'rahmanda' ),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</aside>',
 				'before_title'  => '<h3 class="widget-title">',
@@ -148,9 +148,9 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 
 		register_sidebar(
 			array(
-				'name'          => __( 'Footer Social Icon', 'understrap' ),
+				'name'          => __( 'Footer Social Icon', 'rahmanda' ),
 				'id'            => 'footer-social-icons',
-				'description'   => __( 'Footer social icon widget area', 'understrap' ),
+				'description'   => __( 'Footer social icon widget area', 'rahmanda' ),
 				'before_widget' => '<div id="%1$s" class="footer-widget %2$s dynamic-classes">',
 				'after_widget'  => '</div><!-- .footer-social-icons-widget -->',
 				'before_title'  => '<h3 class="widget-title">',
@@ -159,32 +159,32 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 		);
 
 	}
-} // End of function_exists( 'understrap_widgets_init' ).
+} // End of function_exists( 'rahmanda_widgets_init' ).
 
-add_filter( 'widget_block_dynamic_classname', 'understrap_filter_widget_classes', 10, 2 );
+add_filter( 'widget_block_dynamic_classname', 'rahmanda_filter_widget_classes', 10, 2 );
 
-if ( ! function_exists( 'understrap_filter_widget_classes' ) ) {
+if ( ! function_exists( 'rahmanda_filter_widget_classes' ) ) {
 	/**
 	 * Initializes themes widgets.
 	 */
-	function understrap_filter_widget_classes( $classname, $block_name ){
+	function rahmanda_filter_widget_classes( $classname, $block_name ){
 		switch ($block_name) {
-			case 'understrap/popular-posts':
+			case 'rahmanda/popular-posts':
 				$classname = 'widget_block widget_popular_posts';
 				break;
 		}
 
 		return $classname;
 	}
-} // End of function_exists( 'understrap_filter_widget_classes' ).
+} // End of function_exists( 'rahmanda_filter_widget_classes' ).
 
-add_filter('widget_nav_menu_args',  'understrap_nav_menu_args', 10, 4);
+add_filter('widget_nav_menu_args',  'rahmanda_nav_menu_args', 10, 4);
 
-if ( ! function_exists( 'understrap_nav_menu_args' ) ) {
+if ( ! function_exists( 'rahmanda_nav_menu_args' ) ) {
 	/**
 	 * Change nav menu widget classes
 	 */
-	function understrap_nav_menu_args($nav_menu_args, $nav_menu, $args, $instance) {
+	function rahmanda_nav_menu_args($nav_menu_args, $nav_menu, $args, $instance) {
 		$defaults = array(
 			'menu_class'		=> 'nav',
 		);
@@ -193,30 +193,30 @@ if ( ! function_exists( 'understrap_nav_menu_args' ) ) {
 
 		return $nav_menu_args;
 	}
-} // End of function_exists( 'understrap_nav_hero_args' ).
+} // End of function_exists( 'rahmanda_nav_hero_args' ).
 
-add_filter( 'nav_menu_css_class', 'understrap_nav_menu_css_class');
+add_filter( 'nav_menu_css_class', 'rahmanda_nav_menu_css_class');
 
-if ( ! function_exists( 'understrap_nav_menu_css_class' ) ) {
+if ( ! function_exists( 'rahmanda_nav_menu_css_class' ) ) {
 	/**
 	 * Add useful nav-item class to nav menu classes
 	 */
-	function understrap_nav_menu_css_class( $classes ) {
+	function rahmanda_nav_menu_css_class( $classes ) {
 		$classes[] = 'nav-item';
 
 		return $classes;  
 	}
-} // End of function_exists( 'understrap_nav_menu_css_class' ).
+} // End of function_exists( 'rahmanda_nav_menu_css_class' ).
    
-add_filter( 'nav_menu_link_attributes', 'understrap_nav_menu_link_attributes');
+add_filter( 'nav_menu_link_attributes', 'rahmanda_nav_menu_link_attributes');
 
-if ( ! function_exists( 'understrap_nav_menu_link_attributes' ) ) {
+if ( ! function_exists( 'rahmanda_nav_menu_link_attributes' ) ) {
 	/**
 	 * Add useful nav-link class to nav menu link classes
 	 */
-	function understrap_nav_menu_link_attributes( $attributes ) {
+	function rahmanda_nav_menu_link_attributes( $attributes ) {
 		$attributes['class'] = "nav-link";
 		
 		return $attributes;
 	}
-} // End of function_exists( 'understrap_nav_menu_link_attributes' ).
+} // End of function_exists( 'rahmanda_nav_menu_link_attributes' ).

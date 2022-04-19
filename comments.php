@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 
 		<h2 class="comments-title mb-3">
 
-			<?php echo esc_html__('Komentar', 'understrap') ?>
+			<?php echo esc_html__('Komentar', 'rahmanda') ?>
 
 		</h2><!-- .comments-title -->
 
@@ -36,9 +36,9 @@ if ( post_password_required() ) {
             <?php
             wp_list_comments(
                 array(
-                    'walker' => new Understrap_Comment_Walker,
+                    'walker' => new Rahmanda_Comment_Walker,
                     'avatar-size' => 50,
-                    'callback' => 'understrap_list_comments_callback',
+                    'callback' => 'rahmanda_list_comments_callback',
                     'short_ping' => true,
                 )
             );
@@ -47,7 +47,7 @@ if ( post_password_required() ) {
             </ul>
         </div>
 
-		<?php understrap_comment_navigation(); ?>
+		<?php rahmanda_comment_navigation(); ?>
 
 	<?php endif; // End of if have_comments(). ?>
 </div> <!-- #wrapper-comments -->
@@ -55,7 +55,7 @@ if ( post_password_required() ) {
 <div class="wrapper" id="wrapper-comment-form">
 
     <h2 class="comment-form-title mb-3">
-        <?php echo esc_html__('Tinggalkan Komentar', 'understrap'); ?>
+        <?php echo esc_html__('Tinggalkan Komentar', 'rahmanda'); ?>
     </h2>
 
     <?php comment_form(); ?>

@@ -26,7 +26,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php 
 			the_excerpt(); 
-			understrap_more_link();
+			rahmanda_more_link();
 		?>
 
 	</div><!-- .entry-summary -->

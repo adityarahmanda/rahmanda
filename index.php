@@ -32,7 +32,7 @@ get_header();
 						
 						<h1 class="page-title">
 							
-							<?php echo esc_html__('Postingan', 'understrap'); ?>
+							<?php echo esc_html__('Postingan', 'rahmanda'); ?>
 						
 						</h1>
 
@@ -59,7 +59,7 @@ get_header();
 				</main><!-- #main -->
 
 				<!-- The pagination component -->
-				<?php understrap_pagination(); ?>
+				<?php rahmanda_pagination(); ?>
 
 			</div>
 

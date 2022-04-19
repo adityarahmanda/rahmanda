@@ -28,7 +28,7 @@ get_header();
 								<?php
 								printf(
 									/* translators: %s: query term */
-									esc_html__( 'Hasil pencarian untuk : %s', 'understrap' ),
+									esc_html__( 'Hasil pencarian untuk : %s', 'rahmanda' ),
 									'<span>' . get_search_query() . '</span>'
 								);
 								?>
@@ -59,7 +59,7 @@ get_header();
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
+			<?php rahmanda_pagination(); ?>
 
 			<!-- Do the right sidebar check -->
 			<?php get_template_part( 'sidebar-templates/sidebar', 'right' ); ?>

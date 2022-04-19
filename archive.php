@@ -49,7 +49,7 @@ get_header();
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
+			<?php rahmanda_pagination(); ?>
             
 			<!-- Do the right sidebar check -->
 			<?php get_template_part( 'sidebar-templates/sidebar', 'right' ); ?>

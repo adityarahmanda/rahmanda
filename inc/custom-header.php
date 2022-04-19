@@ -8,18 +8,18 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-add_action( 'after_setup_theme', 'understrap_custom_header_setup' );
+add_action( 'after_setup_theme', 'rahmanda_custom_header_setup' );
 
-if ( ! function_exists( 'understrap_custom_header_setup' ) ) {
+if ( ! function_exists( 'rahmanda_custom_header_setup' ) ) {
 	/**
 	 * Set up custom header feature.
 	 */
-	function understrap_custom_header_setup() {
+	function rahmanda_custom_header_setup() {
 
 		/**
-		 * Filter Understrap custom-header support arguments.
+		 * Filter Rahmanda custom-header support arguments.
 		 *
-		 * @since Understrap 0.5.2
+		 * @since Rahmanda 1.0.0
 		 *
 		 * @param array $args {
 		 *     An array of custom-header support arguments.
@@ -36,7 +36,7 @@ if ( ! function_exists( 'understrap_custom_header_setup' ) ) {
 		add_theme_support(
 			'custom-header',
 			apply_filters(
-				'understrap_custom_header_args',
+				'rahmanda_custom_header_args',
 				array(
 					'default-image' => get_parent_theme_file_uri( '/img/header.jpg' ),
 					'width'         => 2000,
@@ -51,7 +51,7 @@ if ( ! function_exists( 'understrap_custom_header_setup' ) ) {
 				'default-image' => array(
 					'url'           => '%s/img/header.jpg',
 					'thumbnail_url' => '%s/img/header.jpg',
-					'description'   => __( 'Default Header Image', 'understrap' ),
+					'description'   => __( 'Default Header Image', 'rahmanda' ),
 				),
 			)
 		);

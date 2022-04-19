@@ -8,3 +8,9 @@
 #wrapper-footer {
     margin-top: auto;
 }
+
+.container {
+    &:focus-visible {
+        outline: 0;
+    }
+}

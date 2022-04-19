@@ -11,42 +11,28 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<div class="row">
+	<header class="entry-header">
+
+		<?php the_title( '<h1 class="entry-title mb-3">', '</h1>' ); ?>
+
+		<div class="entry-meta mb-3">
 		
-		<div class="col-md-8">
-			
-			<header class="entry-header">
-
-				<?php the_title( '<h1 class="entry-title mb-3">', '</h1>' ); ?>
-
-				<div class="entry-meta mb-3">
-				
-					<?php understrap_work_metas(); ?>
-			
-				</div> <!-- .entry-meta -->
-
-			</header><!-- .entry-header -->
-
-			<div class="entry-content">
-
-				<?php the_content(); ?>
-
-			</div><!-- .entry-content -->
-
-		</div> <!-- col end -->
-
-		<div class="col-md-4">
-
-			<?php understrap_work_development_tools(); ?>
-
-		</div> <!-- col end -->
-
-	</div> <!-- row end -->
-
-	<div class="entry-thumbnail">
-
-		<?php the_post_thumbnail(); ?> 
+			<?php rahmanda_work_metas(); ?>
 	
-	</div>
+		</div> <!-- .entry-meta -->
+
+	</header><!-- .entry-header -->
+
+	<?php the_excerpt(); ?>
+
+	<div class="entry-taxonomies mb-3">
+
+		<?php rahmanda_work_taxonomies(); ?>
+
+	</div><!-- .entry-excerpt -->
+
+	<?php 
+		the_content(); 
+	?>
 
 </article><!-- #post-## -->

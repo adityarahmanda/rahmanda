@@ -10,9 +10,10 @@ const { TextControl } = wp.components;
 
 const { __ } = wp.i18n
 
-registerBlockType('understrap/popular-posts', {
-    title: __('Popular Posts', 'understrap'),
-    description: __('A widget to show the most popular post on the site', 'understrap'),
+registerBlockType('rahmanda/popular-posts', {
+    apiVersion: 2,
+    title: __('Postingan Populer', 'rahmanda'),
+    description: __('Widget untuk menampilkan daftar postingan populer', 'rahmanda'),
     icon: 'feedback',
     category: 'widgets',
 
@@ -34,17 +35,18 @@ registerBlockType('understrap/popular-posts', {
 
         return (   
 			<TextControl 
-                label="Number of Posts"
+                label="Jumlah Postingan"
                 type="number" 
                 value={ attributes.numOfPosts } 
-                onChange={ onChangeInput } />
+                onChange={ onChangeInput } 
+            />
         )
 	},
 
     save: (props) => { 
 		return (
             <div {...useBlockProps.save()}>
-                Popular Post Block Content
+               { __('Memuat Postingan Populer...', 'rahmanda') }
             </div>
         )
     }

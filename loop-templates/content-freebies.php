@@ -13,9 +13,9 @@ defined( 'ABSPATH' ) || exit;
 
     <div class="row">
 
-        <div class="col-4">
+        <div class="col-md-4">
 
-            <div class="entry-thumbnail text-center">
+            <div class="entry-thumbnail text-center mb-3 mb-md-0">
         
                 <?php the_post_thumbnail( 'medium' ); ?>
             
@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 
         </div>
 
-        <div class="col-8">
+        <div class="col-md-8">
 
         <header class="entry-header">
 
@@ -40,7 +40,7 @@ defined( 'ABSPATH' ) || exit;
             <?php the_excerpt(); ?>
                 
             <a href="<?php echo esc_url( get_post_meta( get_the_ID(), '_url', true ) ); ?>" rel="bookmark" target="_blank" >
-                <?php echo esc_html__( 'Unduh', 'understrap' ); ?>
+                <?php echo esc_html__( 'Unduh', 'rahmanda' ); ?>
             </a>
 
             </div><!-- .entry-content -->

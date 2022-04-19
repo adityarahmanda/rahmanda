@@ -5,12 +5,7 @@ body {
 
 // Some basic padding for all wrappers
 .wrapper {
-	padding: $grid-gutter-width 0;
-}
-
-// Reset hero wrapper padding to 0
-#wrapper-hero {
-	padding: 0px !important;
+	padding: $spacer * 1.5 0;
 }
 
 // Adding basic WordPress classes to pass the WordPress.org tests

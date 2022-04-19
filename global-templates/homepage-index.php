@@ -8,7 +8,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$enable_front_page_index = get_theme_mod( 'understrap_front_page_enable_posts' );
+$enable_front_page_index = get_theme_mod( 'rahmanda_front_page_enable_posts' );
 
 if(!$enable_front_page_index) {
     return;
@@ -20,16 +20,18 @@ if(!$enable_front_page_index) {
 
 		<div class="row">
 			
-			<div class="col-md content-area" id="primary">
+			<div class="col-md content-area mb-5 mb-md-0" id="primary">
 
 				<main class="site-main" id="main">
 
-					<div class="index-header mb-4">
-						<h2 class="index-title">
+					<div class="index-header">
 						
-							<?php echo esc_html__( 'Postingan', 'understrap' ); ?>
+						<h2 class="index-title">
+							
+							<?php echo esc_html__( 'Postingan', 'rahmanda' ); ?>
 						
 						</h2>
+
 					</div>
 
 					<?php
@@ -61,7 +63,7 @@ if(!$enable_front_page_index) {
 						
 						<a href="<?php echo get_post_type_archive_link( 'post' ); ?>">
                         
-							<?php echo esc_html__("Intip Postingan Lain", 'understrap'); ?>
+							<?php echo esc_html__("Intip Postingan Lain", 'rahmanda'); ?>
                         
 						</a>
 

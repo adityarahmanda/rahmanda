@@ -1,14 +1,37 @@
 #wrapper-footer {
-    .site-footer {
-        display: flex;
-        justify-content: space-between;
-
-        .site-info {
-            display: flex;
+    .wp-block-social-links {
+        @include list-unstyled;
+        margin: 0;
     
-            span {
-                align-self: flex-end;
+        .wp-block-social-link {
+            display: inline-block;
+            border-radius: 0;
+            background-color: transparent !important;
+            color: $gray-700 !important;
+            padding-inline-start: 0;
+            margin-right: $list-inline-padding;
+            padding: 0;
+    
+            a {
+                padding: 0;
             }
         }
     }
+
+    .site-info {
+        text-align: right;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    #wrapper-footer {
+        .wp-block-social-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        .site-info {
+            text-align: center;
+        }
+    }    
 }

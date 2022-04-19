@@ -1,19 +1,19 @@
 <?php
 /*
- * Class Name: Understrap_Comment_Walker
+ * Class Name: Rahmanda_Comment_Walker
  *  
  *
  * @package Rahmanda
  */
 
 /* Check if Class Exists. */
-if ( !class_exists('Understrap_Comment_Walker') ) {
+if ( !class_exists('Rahmanda_Comment_Walker') ) {
 	/**
-	 * Understrap_Comment_Walker class.
+	 * Rahmanda_Comment_Walker class.
 	 *
 	 * @extends Walker_Comment
 	 */
-    class Understrap_Comment_Walker extends Walker_Comment {
+    class Rahmanda_Comment_Walker extends Walker_Comment {
         /**
          * Starts the list before the elements are added.
          *

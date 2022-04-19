@@ -43,7 +43,7 @@ get_header();
 				<!-- End Loop -->
 
 				<!-- The pagination component -->
-				<?php understrap_pagination(); ?>
+				<?php rahmanda_pagination(); ?>
 
 			</main><!-- #main -->
 

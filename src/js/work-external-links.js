@@ -38,7 +38,7 @@ const UnderstrapWorkExternalLinksSettings = () => {
 		}
 	];
 
-	const labelHeading = __('Tautan', 'understrap');
+	const labelHeading = __('Tautan', 'rahmanda');
 	const labelSeparator = ' - ';
 
 	function onLabelChange(index, value) {
@@ -114,7 +114,7 @@ const UnderstrapWorkExternalLinksSettings = () => {
 	}, [externalLinks]);
 
 	return (
-		<PluginDocumentSettingPanel name="external-links" title={__('Tautan Luar', 'understrap')}>
+		<PluginDocumentSettingPanel name="external-links" title={__('Tautan Luar', 'rahmanda')}>
 			
 			{
 				externalLinks.map((externalLink, index) => (  
@@ -124,17 +124,17 @@ const UnderstrapWorkExternalLinksSettings = () => {
 							{ externalLink.label === "" ? labelHeading : labelHeading + labelSeparator + externalLink.label }
 						</Heading>
 
-						<TextControl label={__('Label', 'understrap')} value={externalLink.label} onChange={(value) => onLabelChange(index, value)} />
-						<TextControl label={__('URL', 'understrap')} value={externalLink.url} onChange={(value) => onURLChange(index, value)} />
-						<TextControl label={__('Ikon', 'understrap')} value={externalLink.icon} help={__("Ikon yang digunakan merupakan ikon-ikon dari Font Awesome, format penulisan 'fa-{nama-icon}'", 'understrap')} onChange={(value) => onIconChange(index, value)} />
+						<TextControl label={__('Label', 'rahmanda')} value={externalLink.label} onChange={(value) => onLabelChange(index, value)} />
+						<TextControl label={__('URL', 'rahmanda')} value={externalLink.url} onChange={(value) => onURLChange(index, value)} />
+						<TextControl label={__('Ikon', 'rahmanda')} value={externalLink.icon} help={__("Ikon yang digunakan merupakan ikon-ikon dari Font Awesome, format penulisan 'fa{b|r|s} fa-{nama-icon}'", 'rahmanda')} onChange={(value) => onIconChange(index, value)} />
 						
-						<Button isDestructive={ true } onClick={() => onDeleteExternalLinkButtonClick(index)} >{__('Hapus Tautan', 'understrap')}</Button>
+						<Button isDestructive={ true } onClick={() => onDeleteExternalLinkButtonClick(index)} >{__('Hapus Tautan', 'rahmanda')}</Button>
 
 					</Spacer>
 				))
 			}
 
-			<Button variant="secondary" onClick={onAddExternalLinkButtonClick} >{__('Tambah Tautan', 'understrap')}</Button>
+			<Button variant="secondary" onClick={onAddExternalLinkButtonClick} >{__('Tambah Tautan', 'rahmanda')}</Button>
 
 		</PluginDocumentSettingPanel>
 	);

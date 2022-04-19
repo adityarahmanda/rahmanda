@@ -22,13 +22,25 @@ defined( 'ABSPATH' ) || exit;
 
             <footer class="site-footer" id="colophon">
 
-                <?php get_template_part( 'sidebar-templates/sidebar', 'footer-social-icons' ); ?>
+                <div class="row">
 
-                <div class="site-info">
+                    <div class="col-md-6">
 
-                    <span> <?php understrap_site_info(); ?> </span>
+                        <?php get_template_part( 'sidebar-templates/sidebar', 'footer-social-icons' ); ?>
 
-                </div><!-- .site-info -->
+                    </div><!--col end -->
+
+                    <div class="col-md-6">
+                        
+                        <div class="site-info">
+                        
+                           <span> <?php rahmanda_site_info(); ?> </span>
+
+                        </div><!-- .site-info -->
+
+                    </div><!--col end -->
+
+                </div><!-- row end -->
 
             </footer><!-- #colophon -->
 

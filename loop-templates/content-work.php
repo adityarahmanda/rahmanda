@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class( "mb-4" ); ?> id="post-<?php the_ID(); ?>">
 
-	<div class="row">
+	<div class="row mb-3">
 		
 		<div class="col-md-8">
 			
@@ -26,25 +26,27 @@ defined( 'ABSPATH' ) || exit;
 
 				<div class="entry-meta mb-3">
 				
-					<?php understrap_work_metas(); ?>
+					<?php rahmanda_work_metas(); ?>
 			
 				</div> <!-- .entry-meta -->
 
 			</header><!-- .entry-header -->
 
-			<div class="entry-content">
+			<div class="entry-excerpt">
 
-				<?php
-				the_excerpt();
-				?>
+				<?php the_excerpt(); ?>
 
 			</div><!-- .entry-content -->
 
 		</div> <!-- col end -->
 
 		<div class="col-md-4">
+	
+			<div class="entry-taxonomies mb-3">
 
-			<?php understrap_work_development_tools(); ?>
+				<?php rahmanda_work_taxonomies(); ?>
+
+			</div><!-- .entry-excerpt -->
 
 		</div> <!-- col end -->
 
@@ -56,6 +58,6 @@ defined( 'ABSPATH' ) || exit;
 	
 	</div>
 
-	<?php understrap_more_link(); ?>
+	<?php rahmanda_more_link(); ?>
 
 </article><!-- #post-## -->
