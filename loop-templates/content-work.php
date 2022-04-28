@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class( "mb-4" ); ?> id="post-<?php the_ID(); ?>">
 
-	<div class="row mb-3">
+	<div class="row">
 		
 		<div class="col-md-8">
 			
@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 				<?php 
 				the_title(
-					sprintf( '<h3 class="entry-title mb-3"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
+					sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
 					'</a></h3>'
 				);
 				?>

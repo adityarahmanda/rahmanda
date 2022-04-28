@@ -149,32 +149,24 @@ if ( ! function_exists( 'rahmanda_comment_form_defaults' ) ) {
             ) 
             . '</div>';
             
-        $comments_notes_after = '<div class="logged-as-in mb-3">' .
+        $logged_in_as = '<p class="logged-in-as">' .
             sprintf(
-                '%1$s <a href="%2$s">%3$s</a>',
+                '%1$s <a href="%2$s" class="fw-bold">%3$s</a>',
                 sprintf( esc_html__('Bukan %1$s?', 'rahmanda'), $user_identity ),
                 esc_url( wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ),
                 esc_html__( 'Keluar', 'rahmanda' )
             )
-            . '</div>';
-
-        $display_reply_to = isset($_GET['replytocom']) ? '' : 'style="display: none"'; 
+            . '</p>';
 
         $defaults = array(
             'must_log_in'          => $must_log_in,
-            'logged_in_as'         => '',
+            'logged_in_as'         => is_user_logged_in() ? $logged_in_as : '',
             'comment_field'        => $comment_field,
-            'comment_notes_before' => '',
-            'comment_notes_after'  => is_user_logged_in() ? $comments_notes_after : '',
-            'title_reply_before'   => '<div class="comment-form-reply mb-3" ' . $display_reply_to . '>',
-            'title_reply_after'    => '</div>',
-            'title_reply'          => '',
-            'title_reply_to'       => esc_html__('Balas %s', 'rahmanda') . ' - ',
             'cancel_reply_before'  => '<span class="comment-cancel-reply">',
-            'cancel_reply_link'    => esc_html__('Batal', 'rahmanda'),
+            'cancel_reply_link'    => ' - ' . esc_html__('Batal', 'rahmanda'),
             'cancel_reply_after'   => '</span>',
             'submit_field'         => '<div class="comment-form-submit">%1$s %2$s</div>',
-            'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="btn btn-primary text-white %3$s" value="%4$s" />',
+            'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="form-control btn btn-primary text-white %3$s" value="%4$s" />',
         );
 
         $defaults = wp_parse_args( $defaults, $args );

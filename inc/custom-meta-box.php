@@ -5,13 +5,36 @@
  * @package Rahmanda
  */
 
-add_action( 'init', 'rahmanda_work_external_links_meta_box' );
+add_action( 'enqueue_block_editor_assets', 'rahmanda_enqueue_custom_metabox_script' );
 
-if ( ! function_exists( 'rahmanda_work_external_links_meta_box' ) ) {
+if ( ! function_exists( 'rahmanda_enqueue_custom_metabox_script' ) ) {
+	/**
+	 * Enqueue custom metabox script
+	 */
+	function rahmanda_enqueue_custom_metabox_script() {
+		$the_theme         = wp_get_theme();
+		$theme_version     = $the_theme->get( 'Version' );
+		$suffix            = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+		$js_script = "/js/meta-boxes{$suffix}.js";
+		$js_version = $theme_version . '.' . filemtime( get_template_directory() . $js_script );
+		
+		wp_enqueue_script( 
+			'meta-boxes-js', 
+			get_template_directory_uri() . $js_script, 
+			array( 'wp-data', 'wp-plugins', 'wp-element', 'wp-components', 'wp-edit-post', 'wp-i18n' ), 
+			$js_version, 
+			true 
+		);
+	}
+}
+
+add_action( 'init', 'rahmanda_register_work_external_links_meta_box' );
+
+if ( ! function_exists( 'rahmanda_register_work_external_links_meta_box' ) ) {
 	/**
 	 * Create external links custom meta box (Gutenberg) for single work.
 	 */
-	function rahmanda_work_external_links_meta_box() {
+	function rahmanda_register_work_external_links_meta_box() {
 		register_post_meta(
 			'work',
 			'_external_links',
@@ -41,29 +64,6 @@ if ( ! function_exists( 'rahmanda_work_external_links_meta_box' ) ) {
 					return current_user_can( 'edit_posts' );
 				}
 			]
-		);
-	}
-}
-
-add_action( 'enqueue_block_editor_assets', 'rahmanda_enqueue_work_external_links_script' );
-
-if ( ! function_exists( 'rahmanda_enqueue_work_external_links_script' ) ) {
-	/**
-	 * Enqueue work external links script
-	 */
-	function rahmanda_enqueue_work_external_links_script() {
-		$the_theme         = wp_get_theme();
-		$theme_version     = $the_theme->get( 'Version' );
-		$suffix            = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-		$js_script = "/js/work-external-links{$suffix}.js";
-		$js_version = $theme_version . '.' . filemtime( get_template_directory() . $js_script );
-		
-		wp_enqueue_script( 
-			'work-external-links-js', 
-			get_template_directory_uri() . $js_script, 
-			array( 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-i18n' ), 
-			$js_version, 
-			true 
 		);
 	}
 }

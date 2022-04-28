@@ -1,20 +1,5 @@
-.nav {
-    .nav-item {
-        .nav-link {
-            text-decoration: underline;
-            color: $nav-link-color;
-        }
-
-        &:first-child {
-            .nav-link {
-                padding-left: 0;
-            }
-        }
-
-        &:last-child {
-            .nav-link {
-                padding-right: 0;
-            }
-        }
-    }
+.nav .nav-item .nav-link {
+    text-decoration: underline;
+    color: $nav-link-color;
+    padding: 0;
 }

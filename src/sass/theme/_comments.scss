@@ -24,10 +24,8 @@
         }
     }
 
-    .children {
-        >.comment {
-            padding-left: $comments-children-padding-x;
-        }
+    .children > .comment {
+        padding-left: $comments-children-padding-x;
     }
 }
 
@@ -47,7 +45,7 @@
 #wrapper-comment-form {
     position: relative;
 
-    .comment-form-title {
+    .comment-reply-title {
         font-size: $font-size-lg;
     }
     
@@ -65,15 +63,8 @@
 }
 
 @include media-breakpoint-down(md) {
-    #wrapper-comments {
-        .comments-title {
-            font-size: $font-size-base;
-        }
+    #wrapper-comments .comments-title, #wrapper-comment-form .comment-reply-title {
+        font-size: $font-size-base;
     }
 
-    #wrapper-comment-form {
-        .comment-form-title {
-            font-size: $font-size-base;
-        }
-    }
 }

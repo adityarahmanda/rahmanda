@@ -12,10 +12,4 @@ if ( ! is_active_sidebar( 'footer-social-icons' ) ) {
 	return;
 }
 
-?>
-
-    <div class="social-icons">
-
-        <?php dynamic_sidebar( 'footer-social-icons' ); ?>
-
-    </div>
+dynamic_sidebar( 'footer-social-icons' );

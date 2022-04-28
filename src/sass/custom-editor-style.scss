@@ -1,7 +1,7 @@
 //Add your own editor styles here or import additional files
 
 // Grab our child theme variables
-@import "theme/theme_variables";
+@import "theme/variables";
 
 // Grab a few bootstrap assets so we can use mixins, variables, etc
 @import "assets/bootstrap5/functions";
@@ -15,11 +15,12 @@
 // Set up basic typography
 @import "assets/bootstrap5/type";
 
+// Grab our child theme mixins
+@import "theme/mixins";
+
 // Start bringing in colors and styles.
-@import "theme/colors";
-@import "theme/blocks";
-
-
+@import "theme/wordpress-colors";
+@import "theme/wordpress-blocks";
 
 // Fixes Gutenberg's cover block color picker.
 .components-circular-option-picker__option {

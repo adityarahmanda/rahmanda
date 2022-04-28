@@ -42,13 +42,7 @@
         }
     }   
 
-    #wrapper-about {
-        .author-image {
-            figure {
-                img {
-                    max-height: 260px;
-                }
-            }
-        }
+    #wrapper-about .author-image figure img {
+        max-height: 260px;
     }
 }

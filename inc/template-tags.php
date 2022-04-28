@@ -91,9 +91,9 @@ if ( ! function_exists( 'rahmanda_work_taxonomies' ) ) {
 			$tag_list = '<ul class="tag-list">';
 			foreach ($tags as $tag) {
 				$tag_list .= sprintf(
-					'<li class="tag-list-item mb-3">'
+					' <li class="tag-list-item mb-3">'
 						. '<a href="%s" rel="category tag">%s</a>'
-					. '</li>',
+					. '</li> ',
 					esc_url( home_url( '/' . $tag_tax_slug . '/' . $tag->slug ) ),
 					$tag->name
 				);
@@ -119,9 +119,9 @@ if ( ! function_exists( 'rahmanda_work_taxonomies' ) ) {
 			$dev_tool_list .= '<ul class="dev-tool-list">';
 			foreach ($dev_tool_terms as $term) {
 				$dev_tool_list .= sprintf(
-					'<li class="dev-tool-list-item">'
-						. '<a href="%s" rel="category tag">%s</a>'
-					. '</li>',
+					' <li class="dev-tool-list-item">'
+						. ' <a href="%s" rel="category tag">%s</a> '
+					. '</li> ',
 					esc_url( home_url( '/' . $dev_tool_tax_slug . '/' . $term->slug ) ),
 					$term->name
 				);

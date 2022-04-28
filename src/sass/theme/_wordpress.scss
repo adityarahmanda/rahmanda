@@ -1,0 +1,81 @@
+// Adding basic WordPress classes to pass the WordPress.org tests
+.sticky,
+.gallery-caption,
+.bypostauthor {
+	font-size: inherit;
+}
+
+// Necessary WP classes
+.wp-caption {
+	font-size: inherit;
+}
+
+.wp-caption-text {
+	font-size: inherit;
+}
+
+.screen-reader-text {
+	@include visually-hidden();
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: $spacer;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: $spacer;
+}
+
+.aligncenter {
+	@extend .mx-auto;
+	display: block;
+}
+
+.widget_categories,
+.widget_archive {
+	select {
+		@extend .form-control;
+	}
+}
+
+// Post design
+img.wp-post-image,
+article img,
+figure,
+img,
+#secondary img {
+	max-width: 100%;
+	height: auto;
+}
+
+// Skip to content link
+a.skip-link {
+	position: fixed;
+	z-index: 1000;
+	top: 0px;
+	right: 0px;
+}
+
+// Galleries
+.gallery {
+	margin-bottom: 1.5em;
+}
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+
+	@for $i from 2 through 9 {
+		.gallery-columns-#{$i} & {
+			max-width: floor( percentage( 1 / $i ) * 100 ) / 100;
+		}
+	}
+}
+.gallery-caption {
+	display: block;
+}

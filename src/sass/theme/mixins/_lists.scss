@@ -1,0 +1,12 @@
+@mixin list-inline-comma-item {
+    display: inline-block;
+    margin-bottom: 0 !important;
+
+    &:not(:last-child) {
+        margin-right: $list-inline-padding;
+        
+        a::after {
+            content: ',';
+        }
+    }
+}

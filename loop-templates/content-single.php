@@ -19,13 +19,13 @@ defined( 'ABSPATH' ) || exit;
 
 	<header class="entry-header">
 
-		<div class="entry-categories mb-2 mb-md-3" >
+		<div class="entry-categories" >
 			
 			<?php the_category(); ?>
 
 		</div>
 
-		<?php the_title( '<h1 class="entry-title mb-2 mb-md-3">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
 

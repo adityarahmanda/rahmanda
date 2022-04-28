@@ -14,41 +14,33 @@ defined( 'ABSPATH' ) || exit;
 
 <div class="wrapper" id="wrapper-footer">
 
-	<div class="container">
+    <footer class="site-footer" id="colophon">
 
-        <div class="row">
+        <div class="container">
 
-            <div class="col-md-12">
+            <div class="row">
 
-            <footer class="site-footer" id="colophon">
+                <div class="col-md-6">
 
-                <div class="row">
+                    <?php get_template_part( 'sidebar-templates/sidebar', 'footer-social-icons' ); ?>
 
-                    <div class="col-md-6">
+                </div><!--col end -->
 
-                        <?php get_template_part( 'sidebar-templates/sidebar', 'footer-social-icons' ); ?>
+                <div class="col-md-6">
+                    
+                    <div class="site-info">
+                    
+                    <span> <?php rahmanda_site_info(); ?> </span>
 
-                    </div><!--col end -->
+                    </div><!-- .site-info -->
 
-                    <div class="col-md-6">
-                        
-                        <div class="site-info">
-                        
-                           <span> <?php rahmanda_site_info(); ?> </span>
+                </div><!--col end -->
 
-                        </div><!-- .site-info -->
+            </div><!-- row end -->
 
-                    </div><!--col end -->
+        </div><!-- container end -->
 
-                </div><!-- row end -->
-
-            </footer><!-- #colophon -->
-
-            </div><!--col end -->
-
-        </div><!-- row end -->
-
-	</div><!-- container end -->
+    </footer><!-- #colophon -->
 
 </div><!-- wrapper end -->
 

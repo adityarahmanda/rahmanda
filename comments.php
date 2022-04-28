@@ -24,7 +24,7 @@ if ( post_password_required() ) {
 
 <div class="wrapper" id="wrapper-comments">
 
-		<h2 class="comments-title mb-3">
+		<h2 class="comments-title">
 
 			<?php echo esc_html__('Komentar', 'rahmanda') ?>
 
@@ -53,10 +53,6 @@ if ( post_password_required() ) {
 </div> <!-- #wrapper-comments -->
 
 <div class="wrapper" id="wrapper-comment-form">
-
-    <h2 class="comment-form-title mb-3">
-        <?php echo esc_html__('Tinggalkan Komentar', 'rahmanda'); ?>
-    </h2>
 
     <?php comment_form(); ?>
 

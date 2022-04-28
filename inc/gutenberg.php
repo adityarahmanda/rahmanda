@@ -6,69 +6,136 @@
  * @package Rahmanda
  */
 
-add_action( 'init', 'rahmanda_popular_posts_block' );
+add_action( 'init', 'rahmanda_register_blocks' );
 
-function rahmanda_popular_posts_block()
-{
-    register_block_type( 'rahmanda/popular-posts', array(
-        'editor_script' => 'popular-posts-js',
-        'render_callback' => 'rahmanda_child_popular_posts_render_callback'
-    ));
+if ( ! function_exists( 'rahmanda_register_blocks' ) ) {
+
+	/**
+	 * Register custom blocks
+	 */
+	function rahmanda_register_blocks() {
+		register_block_type( 'rahmanda/applause-button', array(
+			'api_version' => 2,
+			'editor_script' 	=> 'rahmanda-blocks-js',
+			'attributes'      	=> array(
+				'align'		=> array(
+					'type' 		=> 'string',
+					'default' 	=> 'center'
+				),
+				'size'		=> array( 
+					'type' 		=> 'int',
+					'default' 	=> 36, 
+				),
+				'color'		=> array( 
+					'type' 		=> 'string', 
+					'default' 	=> '#929EC9' 
+				),
+				'multiclap'	=> array( 
+					'type' 		=> 'boolean', 
+					'default' 	=> true
+				),
+			),
+			'render_callback'	=>	'rahmanda_applause_button_block_render_callback'
+		));
+
+		register_block_type( 'rahmanda/popular-posts', array(
+			'api_version' 		=> 2,
+			'editor_script' 	=> 'rahmanda-blocks-js',
+			'attributes'      	=> array(
+				'numOfPosts' => array(
+					'type' 		=> 'int',
+					'default' 	=> 4,
+				)
+			),
+			'render_callback' => 'rahmanda_popular_posts_block_render_callback'
+		));
+
+		register_block_type( 'rahmanda/ellipsis-separator', array(
+			'api_version' 		=> 2,
+			'editor_script' 	=> 'rahmanda-blocks-js',
+		));
+	}
 }
 
+add_action( 'enqueue_block_editor_assets', 'rahmanda_enqueue_blocks_script' );
 
-add_action( 'enqueue_block_editor_assets', 'rahmanda_enqueue_popular_posts_block_script' );
-
-if ( ! function_exists( 'rahmanda_enqueue_popular_posts_block_script' ) ) {
+if ( ! function_exists( 'rahmanda_enqueue_blocks_script' ) ) {
 	/**
-	 * Enqueue popular post block script
+	 * Enqueue custom blocks script
 	 */
-	function rahmanda_enqueue_popular_posts_block_script() {
+	function rahmanda_enqueue_blocks_script() {
 		$the_theme         = wp_get_theme();
 		$theme_version     = $the_theme->get( 'Version' );
 		$suffix            = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-		$js_script = "/js/popular-posts-block{$suffix}.js";
-		$js_version = $theme_version . '.' . filemtime( get_template_directory() . $js_script );
 		
+		$js_script = "/js/blocks{$suffix}.js";
+		$js_version = $theme_version . '.' . filemtime( get_template_directory() . $js_script );
+
 		wp_enqueue_script( 
-			'popular-posts-js', 
+			'rahmanda-blocks-js', 
 			get_template_directory_uri() . $js_script, 
-			array( 'wp-element', 'wp-blocks', 'wp-block-editor', 'wp-i18n' ), 
+			array( 'wp-blocks', 'wp-block-editor', 'wp-components', 'wp-i18n' ), 
 			$js_version, 
 			true 
 		);
 	}
 }
 
-// Optional: Moved render callback to separate function to keep logic clear
-function rahmanda_child_popular_posts_render_callback($attributes, $content){
-    $numOfPosts = $attributes['numOfPosts'] ? $attributes['numOfPosts'] : 4;
+if ( ! function_exists( 'rahmanda_applause_button_block_render_callback' ) ) {
+	function rahmanda_applause_button_block_render_callback($attributes, $content) {
+		$aligmentClass = isset($attributes['align']) ? 'd-flex justify-content-' . $attributes['align'] : 'd-flex justify-content-center';
+		$size = isset($attributes['size']) ? $attributes['size'] . 'px' : '36px';
+		$color = isset($attributes['color']) ? $attributes['color'] : '#929EC9';
+		$multiclap = isset($attributes['multiclap']) ? ($attributes['multiclap'] ? 'true' : 'false') : 'true';
+		$url = is_single() || is_page() ? get_permalink( get_the_ID() ) : '';
 
-  	$args = array(
-  		"posts_per_page"        => $numOfPosts,
-  		'orderby'               => 'comment_count',
-  		'order'                 => 'DESC'
-  	);
+		$classesArray = array('wp-block-applause-button', $aligmentClass);
+		if(isset($attributes['className'])) {
+			array_push($classesArray, $attributes['className']);
+		}
+		$elementClasses = join(" ", $classesArray);
 
-    $html = '';
-    $queryResult = new WP_Query($args);
-    if($queryResult -> have_posts())
-    {
-        $html .= '<ul class="wp-block-popular-posts-list ' . $attributes['className'] .'">';
-        
-        while($queryResult ->have_posts())
-        {	
-            $queryResult ->the_post();
+		return '<div class="'. $elementClasses .'">'
+			.'<applause-button size="'. $size .'" color="'. $color .'" multiclap="'. $multiclap .'" url="'. $url .'" />'
+		.'</div>';
+	}
+}
 
-            $html .= '<li class="popular-posts-list-item">'
-            . '<a href="' . get_permalink() . '" class="popular-posts-title">' . get_the_title() . '</a>'
-            . '</li>';
-        }
+if ( ! function_exists( 'rahmanda_popular_posts_block_render_callback' ) ) {
+	function rahmanda_popular_posts_block_render_callback($attributes, $content){
+		$numOfPosts = $attributes['numOfPosts'] ? $attributes['numOfPosts'] : 4;
 
-	    $html .= '</ul>';
-    } else {
-        $html .= esc_html_e( 'Tak ada postingan', 'rahmanda' );
-    }
+		$args = array(
+			"posts_per_page"        => $numOfPosts,
+			'orderby'               => 'comment_count',
+			'order'                 => 'DESC'
+		);
 
-    return $html;
+		$classesArray = array('wp-block-popular-posts-list');
+		if(isset($attributes['className'])) {
+			array_push($classesArray, $attributes['className']);
+		}
+		$elementClasses = join(" ", $classesArray);
+		
+		$queryResult = new WP_Query($args);
+		if($queryResult -> have_posts())
+		{
+			$html .= '<ul class="' . $elementClasses .'">';
+
+			while($queryResult ->have_posts())
+			{	
+				$queryResult ->the_post();
+
+				$html .= '<li class="popular-posts-list-item">'
+				. '<a href="' . get_permalink() . '" class="popular-posts-title">' . get_the_title() . '</a>'
+				. '</li>';
+			}
+
+			$html .= '</ul>';
+		} else {
+			$html .= '<span class="'. $elementClasses .'">'.esc_html_e( 'Tak ada postingan', 'rahmanda' ).'</span>';
+		}
+
+		return $html;
+	}
 }

@@ -1,0 +1,159 @@
+@mixin animate-once($name) {
+  animation-name: $name;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+@mixin position-fill() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+applause-button {
+  position: relative;
+  cursor: pointer;
+
+  .style-root {
+    position: relative;
+  }
+
+  &.loading {
+    opacity: 0.5;
+  }
+
+  .applause-icon {
+    position: relative;
+    width: 36px;
+    height: 36px;
+
+    svg {
+      @include position-fill();
+      opacity: 1;
+      stroke: none;
+      // annoyingly bootstrap has a higher precedence rule that sets overflow to hidden
+      // hence the bang-important
+      overflow: visible !important;
+
+      g.flat {
+        visibility: hidden;
+      }
+      g.outline {
+        visibility: visible;
+      }
+    }
+  }
+
+  &.clap-limit-exceeded {
+    cursor: inherit;
+    div {
+      fill: $gray-400 !important;
+      stroke: $gray-400 !important;
+      color: $gray-400 !important;
+    }
+
+  }
+
+  &.clapped {
+    svg {
+      g.flat {
+        visibility: visible;
+      }
+      g.outline {
+        visibility: hidden;
+      }
+    }
+  }
+
+  .count-container {
+    position: relative;
+    width: 100%;
+    color: $gray-700;
+    user-select: none;
+
+    .count {
+      text-align: center;
+    }
+  }
+
+  g.sparkle {
+    circle {
+      opacity: 0;
+      stroke-width: 0;
+    }
+
+    $elements: 5;
+    $degrees: 360deg / $elements;
+    @for $i from 0 to $elements {
+      g:nth-child(#{$i + 1}) {
+        transform: rotate($degrees * $i) translateX(10px);
+      }
+    }
+  }
+  
+  // CSS that is toggled to fire one-time animations
+  &.clap {
+    .sparkle circle {
+      @include animate-once(explode);
+    }
+
+    @include animate-once(pulse);
+
+    .count {
+      @include animate-once(hideThenShow);
+    }
+  }
+}
+
+@keyframes explode {
+  0% {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes hideThenShow {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  80% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

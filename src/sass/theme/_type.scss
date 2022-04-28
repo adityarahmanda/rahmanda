@@ -2,3 +2,24 @@
     padding-left: $blockquote-padding-x;
     border-left: $blockquote-border-width solid $blockquote-border-color;
 }
+
+.ellipsis-separator {
+    padding: $spacer * 1.5 0;
+    text-align: center;
+
+    .ellipsis-dot {
+        display: inline-block;
+        height: 3px;
+        width: 3px;
+        background-color: $gray-700;
+        border-radius: $border-radius-circle;
+        
+        &::after {
+            content: "";
+        }
+
+        &:not(:last-child) {
+            margin-right: $spacer;
+        }
+    }
+}
