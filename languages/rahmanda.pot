@@ -1,36 +1,702 @@
-# Copyright (C) 2022 Aditya Rahmanda
-# This file is distributed under the Rahmanda WordPress Theme, Copyright 2022 Aditya Rahmanda.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Aditya Rahmanda
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Rahmanda 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/rahmanda\n"
+"Project-Id-Version: Rahmanda 1.1.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-29 21:02+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-08-20T00:31:53+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.4.0\n"
-"X-Domain: rahmanda\n"
 
-#. Theme Name of the theme
-msgid "Rahmanda"
+#: 404.php:28
+msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#. Theme URI of the theme
-#: inc/hooks.php:40
-msgid "https://adityarahmanda.com/kerjaan/rahmanda"
+#: 404.php:34
+msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#. Description of the theme
-msgid "A portofolio Wordpress theme which was made based on Understrap."
+#: comments.php:29
+msgid "Komentar"
 msgstr ""
 
-#. Author of the theme
-msgid "Aditya Rahmanda"
+#: header.php:29
+msgid "Skip to content"
 msgstr ""
 
-#. Author URI of the theme
-msgid "https://github.com/adityarahmanda"
+#: index.php:35 global-templates/homepage-index.php:31
+msgid "Postingan"
+msgstr ""
+
+#: search.php:31
+#, php-format
+msgid "Hasil pencarian untuk : %s"
+msgstr ""
+
+#: searchform.php:21
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:23
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:25 searchform.php:28
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: global-templates/featured-work.php:32
+msgid "Kerjaan Unggulan"
+msgstr ""
+
+#: global-templates/featured-work.php:70
+msgid "Intip Kerjaan Lain"
+msgstr ""
+
+#: global-templates/homepage-index.php:66
+msgid "Intip Postingan Lain"
+msgstr ""
+
+#: global-templates/navbar.php:17
+msgid "Main Navigation"
+msgstr ""
+
+#: global-templates/navbar.php:46
+msgid "Toggle navigation"
+msgstr ""
+
+#: inc/class-wp-bootstrap-navwalker.php:377
+msgid "Add a menu"
+msgstr ""
+
+#: inc/custom-comments.php:23
+msgid "Komentar akan muncul setelah disetujui."
+msgstr ""
+
+#: inc/custom-comments.php:47 inc/custom-comments.php:50
+msgid "Balas"
+msgstr ""
+
+#: inc/custom-comments.php:49
+#, php-format
+msgid "Balas ke %s"
+msgstr ""
+
+#: inc/custom-comments.php:92
+msgid "Nama"
+msgstr ""
+
+#: inc/custom-comments.php:96
+msgid "Email"
+msgstr ""
+
+#: inc/custom-comments.php:101
+msgid ""
+"Simpan nama dan email saya pada peramban ini untuk komentar saya berikutnya."
+msgstr ""
+
+#: inc/custom-comments.php:142
+msgid "Tuliskan komentarmu di sini"
+msgstr ""
+
+#: inc/custom-comments.php:147
+#, php-format
+msgid ""
+"Kamu harus <a href=\"%1$s\">masuk</a> terlebih dahulu untuk berkomentar."
+msgstr ""
+
+#: inc/custom-comments.php:155
+#, php-format
+msgid "Bukan %1$s?"
+msgstr ""
+
+#: inc/custom-comments.php:157
+msgid "Keluar"
+msgstr ""
+
+#: inc/custom-comments.php:167
+msgid "Batal"
+msgstr ""
+
+#: inc/custom-comments.php:189
+msgid "Comments are closed."
+msgstr ""
+
+#: inc/custom-header.php:54
+msgid "Default Header Image"
+msgstr ""
+
+#: inc/custom-meta-box.php:95
+msgid "Tautan"
+msgstr ""
+
+#: inc/custom-post-type.php:16
+msgctxt "Post Type General Name"
+msgid "Kerjaan"
+msgstr ""
+
+#: inc/custom-post-type.php:17
+msgctxt "Post Type Singular Name"
+msgid "Kerjaan"
+msgstr ""
+
+#: inc/custom-post-type.php:18 inc/custom-post-type.php:19
+#: inc/custom-post-type.php:42 inc/custom-post-type.php:43
+msgid "Kerjaan"
+msgstr ""
+
+#: inc/custom-post-type.php:20
+msgid "Arsip Kerjaan"
+msgstr ""
+
+#: inc/custom-post-type.php:21
+msgid "Atribut Kerjaan"
+msgstr ""
+
+#: inc/custom-post-type.php:22
+msgid "Induk Kerjaan:"
+msgstr ""
+
+#: inc/custom-post-type.php:23
+msgid "Semua Kerjaan"
+msgstr ""
+
+#: inc/custom-post-type.php:24
+msgid "Tambahkan Kerjaan Baru"
+msgstr ""
+
+#: inc/custom-post-type.php:25 inc/custom-post-type.php:85
+msgid "Tambah Baru"
+msgstr ""
+
+#: inc/custom-post-type.php:26
+msgid "Kerjaan Baru"
+msgstr ""
+
+#: inc/custom-post-type.php:27
+msgid "Sunting Kerjaan"
+msgstr ""
+
+#: inc/custom-post-type.php:28
+msgid "Perbarui Kerjaan"
+msgstr ""
+
+#: inc/custom-post-type.php:29 inc/custom-post-type.php:30
+msgid "Lihat Kerjaan"
+msgstr ""
+
+#: inc/custom-post-type.php:31
+msgid "Cari Kerjaan"
+msgstr ""
+
+#: inc/custom-post-type.php:32
+msgid "Kerjaan tidak ditemukan"
+msgstr ""
+
+#: inc/custom-post-type.php:33
+msgid "Kerjaan tidak ditemukan di tong sampah"
+msgstr ""
+
+#: inc/custom-post-type.php:34
+msgid "Sisipkan ke dalam Kerjaan"
+msgstr ""
+
+#: inc/custom-post-type.php:35
+msgid "Diunggah ke dalam Kerjaan ini"
+msgstr ""
+
+#: inc/custom-post-type.php:36
+msgid "Daftar Kerjaan"
+msgstr ""
+
+#: inc/custom-post-type.php:37
+msgid "Navigasi daftar Kerjaan"
+msgstr ""
+
+#: inc/custom-post-type.php:38
+msgid "Filter daftar Kerjaan"
+msgstr ""
+
+#: inc/custom-post-type.php:76
+msgctxt "Post Type General Name"
+msgid "Gratisan"
+msgstr ""
+
+#: inc/custom-post-type.php:77
+msgctxt "Post Type Singular Name"
+msgid "Gratisan"
+msgstr ""
+
+#: inc/custom-post-type.php:78 inc/custom-post-type.php:79
+#: inc/custom-post-type.php:102
+msgid "Gratisan"
+msgstr ""
+
+#: inc/custom-post-type.php:80
+msgid "Arsip Gratisan"
+msgstr ""
+
+#: inc/custom-post-type.php:81
+msgid "Atribut Gratisan"
+msgstr ""
+
+#: inc/custom-post-type.php:82
+msgid "Induk Gratisan:"
+msgstr ""
+
+#: inc/custom-post-type.php:83
+msgid "Semua Gratisan"
+msgstr ""
+
+#: inc/custom-post-type.php:84
+msgid "Tambahkan Gratisan Baru"
+msgstr ""
+
+#: inc/custom-post-type.php:86
+msgid "Gratisan Baru"
+msgstr ""
+
+#: inc/custom-post-type.php:87
+msgid "Sunting Gratisan"
+msgstr ""
+
+#: inc/custom-post-type.php:88
+msgid "Perbarui Gratisan"
+msgstr ""
+
+#: inc/custom-post-type.php:89 inc/custom-post-type.php:90
+msgid "Lihat Gratisan"
+msgstr ""
+
+#: inc/custom-post-type.php:91
+msgid "Cari Gratisan"
+msgstr ""
+
+#: inc/custom-post-type.php:92
+msgid "Gratisan tidak ditemukan"
+msgstr ""
+
+#: inc/custom-post-type.php:93
+msgid "Gratisan tidak ditemukan di tong sampah"
+msgstr ""
+
+#: inc/custom-post-type.php:94
+msgid "Sisipkan ke dalam Gratisan"
+msgstr ""
+
+#: inc/custom-post-type.php:95
+msgid "Diunggah ke dalam Gratisan ini"
+msgstr ""
+
+#: inc/custom-post-type.php:96
+msgid "Daftar Gratisan"
+msgstr ""
+
+#: inc/custom-post-type.php:97
+msgid "Navigasi daftar Gratisan"
+msgstr ""
+
+#: inc/custom-post-type.php:98
+msgid "Filter daftar Gratisan"
+msgstr ""
+
+#: inc/custom-post-type.php:103
+msgid ""
+"Kumpulan hasil kerjaan yang dapat diunduh dan dimanfaatkan secara gratis."
+msgstr ""
+
+#: inc/custom-taxonomies.php:18
+msgctxt "general name"
+msgid "Label"
+msgstr ""
+
+#: inc/custom-taxonomies.php:19
+msgctxt "singular name"
+msgid "Label"
+msgstr ""
+
+#: inc/custom-taxonomies.php:20
+msgid "Pisahkan label dengan koma"
+msgstr ""
+
+#: inc/custom-taxonomies.php:21
+msgid "Pilih label yang paling sering digunakan"
+msgstr ""
+
+#: inc/custom-taxonomies.php:22
+msgid "Cari Label"
+msgstr ""
+
+#: inc/custom-taxonomies.php:23
+msgid "Semua Label"
+msgstr ""
+
+#: inc/custom-taxonomies.php:24
+msgid "Induk Label"
+msgstr ""
+
+#: inc/custom-taxonomies.php:25
+msgid "Induk Label:"
+msgstr ""
+
+#: inc/custom-taxonomies.php:26
+msgid "Sunting Label"
+msgstr ""
+
+#: inc/custom-taxonomies.php:27
+msgid "Perbarui Label"
+msgstr ""
+
+#: inc/custom-taxonomies.php:28
+msgid "Tambahkan Label Baru"
+msgstr ""
+
+#: inc/custom-taxonomies.php:29
+msgid "Nama Label Baru"
+msgstr ""
+
+#: inc/custom-taxonomies.php:30
+msgid "Tidak ada label yang ditemukan."
+msgstr ""
+
+#: inc/custom-taxonomies.php:31
+msgid "Tanpa Label"
+msgstr ""
+
+#: inc/custom-taxonomies.php:32
+msgid "Navigasi daftar label"
+msgstr ""
+
+#: inc/custom-taxonomies.php:33
+msgid "Daftar label"
+msgstr ""
+
+#: inc/custom-taxonomies.php:34
+msgid "← Pergi ke Label"
+msgstr ""
+
+#: inc/custom-taxonomies.php:35
+msgid "Tautan Label"
+msgstr ""
+
+#: inc/custom-taxonomies.php:36
+msgid "Tautan ke label."
+msgstr ""
+
+#: inc/custom-taxonomies.php:37 inc/custom-taxonomies.php:41
+msgid "Label"
+msgstr ""
+
+#: inc/custom-taxonomies.php:54
+msgctxt "general name"
+msgid "Perkakas"
+msgstr ""
+
+#: inc/custom-taxonomies.php:55
+msgctxt "singular name"
+msgid "Perkakas"
+msgstr ""
+
+#: inc/custom-taxonomies.php:56
+msgid "Cari Perkakas"
+msgstr ""
+
+#: inc/custom-taxonomies.php:57
+msgid "Semua Perkakas"
+msgstr ""
+
+#: inc/custom-taxonomies.php:58
+msgid "Induk Perkakas"
+msgstr ""
+
+#: inc/custom-taxonomies.php:59
+msgid "Induk Perkakas:"
+msgstr ""
+
+#: inc/custom-taxonomies.php:60
+msgid "Sunting Perkakas"
+msgstr ""
+
+#: inc/custom-taxonomies.php:61
+msgid "Perbarui Perkakas"
+msgstr ""
+
+#: inc/custom-taxonomies.php:62
+msgid "Tambahkan Perkakas Baru"
+msgstr ""
+
+#: inc/custom-taxonomies.php:63
+msgid "Nama Perkakas Baru"
+msgstr ""
+
+#: inc/custom-taxonomies.php:64
+msgid "Tidak ada perkakas yang ditemukan."
+msgstr ""
+
+#: inc/custom-taxonomies.php:65
+msgid "Tanpa Perkakas"
+msgstr ""
+
+#: inc/custom-taxonomies.php:66
+msgid "Navigasi daftar Perkakas"
+msgstr ""
+
+#: inc/custom-taxonomies.php:67
+msgid "Daftar Perkakas"
+msgstr ""
+
+#: inc/custom-taxonomies.php:68
+msgid "← Pergi ke Perkakas"
+msgstr ""
+
+#: inc/custom-taxonomies.php:69
+msgid "Tautan Perkakas"
+msgstr ""
+
+#: inc/custom-taxonomies.php:70
+msgid "Tautan ke Perkakas."
+msgstr ""
+
+#: inc/custom-taxonomies.php:71
+msgid "Perkakas"
+msgstr ""
+
+#: inc/customizer.php:42
+msgid "Pengaturan Tema"
+msgstr ""
+
+#: inc/customizer.php:44
+msgid "Ubah pengaturan baku tema"
+msgstr ""
+
+#: inc/customizer.php:84
+msgid "Sembunyikan Navbar Brand - Front Page"
+msgstr ""
+
+#: inc/customizer.php:85
+msgid "Menyembunyikan navbar brand di halaman depan"
+msgstr ""
+
+#: inc/customizer.php:109
+msgid "Kerjaan Unggulan - Front Page"
+msgstr ""
+
+#: inc/customizer.php:110
+msgid "Menampilkan kerjaan unggulan di atas postingan di halaman depan"
+msgstr ""
+
+#: inc/customizer.php:134
+msgid "Postingan - Front Page"
+msgstr ""
+
+#: inc/customizer.php:135
+msgid "Menampilkan postingan di halaman depan"
+msgstr ""
+
+#: inc/customizer.php:159
+msgid "Info Website - Footer"
+msgstr ""
+
+#: inc/customizer.php:160
+msgid "Mengganti tulisan informasi website di bagian footer website ini"
+msgstr ""
+
+#: inc/deprecated.php:80
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: inc/deprecated.php:81
+msgid "Previous"
+msgstr ""
+
+#: inc/deprecated.php:82
+msgid "Next"
+msgstr ""
+
+#: inc/deprecated.php:83
+msgid "About:"
+msgstr ""
+
+#: inc/deprecated.php:84
+msgid "Profile"
+msgstr ""
+
+#: inc/deprecated.php:85
+msgid "Posts by"
+msgstr ""
+
+#: inc/deprecated.php:86
+msgid "Permanent Link:"
+msgstr ""
+
+#: inc/deprecated.php:87
+msgid "in"
+msgstr ""
+
+#: inc/deprecated.php:88
+msgid "Edit"
+msgstr ""
+
+#: inc/editor.php:50
+msgid "Lead Paragraph"
+msgstr ""
+
+#: inc/editor.php:56
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: inc/editor.php:60
+msgid "Blockquote"
+msgstr ""
+
+#: inc/editor.php:66
+msgid "Blockquote Footer"
+msgstr ""
+
+#: inc/editor.php:72
+msgid "Cite"
+msgstr ""
+
+#: inc/extras.php:289 inc/hooks.php:30
+msgid "Dibuat dengan Sepenuh &#9829; "
+msgstr ""
+
+#: inc/extras.php:290 inc/hooks.php:31
+msgid "&copy; 2021"
+msgstr ""
+
+#: inc/extras.php:291 inc/hooks.php:32
+msgid "https://adityarahmanda.com"
+msgstr ""
+
+#: inc/extras.php:296
+msgid "Baca Selengkapnya"
+msgstr ""
+
+#: inc/gutenberg.php:151
+msgid "Tak ada postingan"
+msgstr ""
+
+#: inc/pagination.php:53
+msgid "&laquo;"
+msgstr ""
+
+#: inc/pagination.php:54
+msgid "&raquo;"
+msgstr ""
+
+#: inc/pagination.php:57
+msgid "Posts navigation"
+msgstr ""
+
+#: inc/setup.php:49
+msgid "Primary Menu"
+msgstr ""
+
+#: inc/template-tags.php:181
+msgid "Comment navigation"
+msgstr ""
+
+#: inc/template-tags.php:187
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: inc/template-tags.php:193
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: inc/template-tags.php:216
+msgid "Pages:"
+msgstr ""
+
+#: inc/widgets.php:103
+msgid "Hero Canvas"
+msgstr ""
+
+#: inc/widgets.php:105
+msgid "Full size canvas hero area for Bootstrap and other custom HTML markup"
+msgstr ""
+
+#: inc/widgets.php:115
+msgid "About Canvas"
+msgstr ""
+
+#: inc/widgets.php:117
+msgid "Full size canvas about area for Bootstrap and other custom HTML markup"
+msgstr ""
+
+#: inc/widgets.php:127
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/widgets.php:129
+msgid "Right sidebar widget area"
+msgstr ""
+
+#: inc/widgets.php:139
+msgid "Single Footer"
+msgstr ""
+
+#: inc/widgets.php:141
+msgid "Single footer widget area"
+msgstr ""
+
+#: inc/widgets.php:151
+msgid "Footer Social Icon"
+msgstr ""
+
+#: inc/widgets.php:153
+msgid "Footer social icon widget area"
+msgstr ""
+
+#: loop-templates/content-freebies.php:43
+msgid "Unduh"
+msgstr ""
+
+#: loop-templates/content-none-freebies.php:18
+#: loop-templates/content-none-work.php:18 loop-templates/content-none.php:18
+msgid "Nihil"
+msgstr ""
+
+#: loop-templates/content-none-freebies.php:25
+#: loop-templates/content-none-work.php:39
+msgid "Maaf, sepertinya kerjaan lagi kosong nih."
+msgstr ""
+
+#: loop-templates/content-none-work.php:31
+#, php-format
+msgid ""
+"Sepertinya kerjaan lagi kosong nih? <a href=\"%1$s\">Mulai pos kerjaan di "
+"sini</a>."
+msgstr ""
+
+#: loop-templates/content-none.php:30
+#, php-format
+msgid ""
+"Sepertinya postingan lagi kosong nih? <a href=\"%1$s\">Mulai pos di sini</a>."
+msgstr ""
+
+#: loop-templates/content-none.php:38
+msgid ""
+"Maaf, tak ada yang cocok sama kata kunci tersebut. Coba cari lagi dengan "
+"kata kunci lain."
+msgstr ""
+
+#: loop-templates/content-none.php:45
+msgid "Maaf, sepertinya postingan lagi kosong nih."
 msgstr ""

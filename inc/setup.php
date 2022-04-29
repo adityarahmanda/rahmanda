@@ -57,7 +57,6 @@ if ( ! function_exists( 'rahmanda_setup' ) ) {
 		add_theme_support(
 			'html5',
 			array(
-				'search-form',
 				'comment-form',
 				'comment-list',
 				'gallery',
@@ -89,18 +88,6 @@ if ( ! function_exists( 'rahmanda_setup' ) ) {
 				'video',
 				'quote',
 				'link',
-			)
-		);
-
-		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'rahmanda_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
 			)
 		);
 

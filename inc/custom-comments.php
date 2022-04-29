@@ -14,13 +14,13 @@ if ( ! function_exists( 'rahmanda_list_comments_callback' ) ) {
         <li <?php comment_class('mb-3'); ?> id="li-comment-<?php comment_ID() ?>">
             <div class="wrapper-comment-inner">
                 <div class="comment-avatar">
-                    <?php echo get_avatar($comment, $args['avatar-size'], $default='https://secure.gravatar.com/avatar/210f03eb7e0d6e9a2ad257db01e79be2?s=50&d=mm&r=g' ); ?>
+                    <?php echo get_avatar($comment, $args['avatar-size'] ); ?>
                 </div>
                 
                 <div class="comment-content">
                     <?php if ($comment->comment_approved == '0') : ?>
                         <em>
-                            <?php esc_html__('Komentar akan muncul setelah disetujui.', 'rahmanda') ?>
+                            <?php echo esc_html__('Komentar akan muncul setelah disetujui.', 'rahmanda') ?>
                         </em>
                         <br />
                     <?php endif; ?>
@@ -159,14 +159,15 @@ if ( ! function_exists( 'rahmanda_comment_form_defaults' ) ) {
             . '</p>';
 
         $defaults = array(
-            'must_log_in'          => $must_log_in,
-            'logged_in_as'         => is_user_logged_in() ? $logged_in_as : '',
-            'comment_field'        => $comment_field,
-            'cancel_reply_before'  => '<span class="comment-cancel-reply">',
-            'cancel_reply_link'    => ' - ' . esc_html__('Batal', 'rahmanda'),
-            'cancel_reply_after'   => '</span>',
-            'submit_field'         => '<div class="comment-form-submit">%1$s %2$s</div>',
-            'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="form-control btn btn-primary text-white %3$s" value="%4$s" />',
+            'must_log_in'           => $must_log_in,
+            'logged_in_as'          => is_user_logged_in() ? $logged_in_as : '',
+            'comment_field'         => $comment_field,
+            'comment_notes_before'  => '',
+            'cancel_reply_before'   => '<span class="comment-cancel-reply">',
+            'cancel_reply_link'     => ' - ' . esc_html__('Batal', 'rahmanda'),
+            'cancel_reply_after'    => '</span>',
+            'submit_field'          => '<div class="comment-form-submit">%1$s %2$s</div>',
+            'submit_button'         => '<input name="%1$s" type="submit" id="%2$s" class="form-control btn btn-primary text-white %3$s" value="%4$s" />',
         );
 
         $defaults = wp_parse_args( $defaults, $args );
@@ -190,3 +191,16 @@ if ( ! function_exists( 'rahmanda_comment_form_comments_closed' ) ) {
 		}
 	}
 } // End of if function_exists( 'rahmanda_comment_form_comments_closed' ).
+
+add_filter( 'avatar_defaults', 'rahmanda_add_new_gravatar' );
+
+if ( ! function_exists( 'rahmanda_add_new_gravatar' ) ) {
+	/**
+	 * Add new default gravatar
+	 */
+    function rahmanda_add_new_gravatar ($avatar_defaults) {
+        $myavatar = 'https://secure.gravatar.com/avatar/518e4863b438ccefbd093cc9a00888e7';
+        $avatar_defaults[$myavatar] = "Rahmanda Default Gravatar";
+        return $avatar_defaults;
+    }
+}

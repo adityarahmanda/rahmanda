@@ -28,6 +28,21 @@ if ( ! function_exists( 'rahmanda_enqueue_custom_metabox_script' ) ) {
 	}
 }
 
+add_action( 'init', 'rahmanda_meta_boxes_set_script_translations' );
+
+if ( ! function_exists( 'rahmanda_meta_boxes_set_script_translations' ) ) {
+	/**
+	 * Make meta boxes script translatable
+	 */
+	function rahmanda_meta_boxes_set_script_translations() {
+		wp_set_script_translations( 
+			'meta-boxes-js', 
+			'rahmanda',
+			get_template_directory_uri() . '/languages' 
+		);
+	}
+}
+
 add_action( 'init', 'rahmanda_register_work_external_links_meta_box' );
 
 if ( ! function_exists( 'rahmanda_register_work_external_links_meta_box' ) ) {

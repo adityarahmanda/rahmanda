@@ -1,8 +1,12 @@
 # Rahmanda
 Contributors: Aditya Rahmanda
-Tags: two-columns, right-sidebar, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, translation-ready
+
+Tags: one-column, two-columns, right-sidebar, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, translation-ready, block-styles, editor-style, threaded-comments, accessibility-ready
+
 Requires at least: 5.0
+
 Tested up to: 5.7.2
+
 Requires PHP: 5.2
 
 ## Description
@@ -27,3 +31,5 @@ This theme bundles the following third-party resources:
 * Font Awesome: https://fontawesome.com/v4.7/license/ (Font: SIL OFL 1.1, (S)CSS: MIT)
 * Bootstrap: http://getbootstrap.com | https://github.com/twbs/bootstrap/blob/master/LICENSE (MIT)
 * WP Bootstrap Navwalker by Edward McIntyre & William Patton: https://github.com/wp-bootstrap/wp-bootstrap-navwalker (GNU GPLv3)
+* Applause Button by Colin Eberhardt: https://applause-button.com/ | https://github.com/ColinEberhardt/applause-button (MIT)
+

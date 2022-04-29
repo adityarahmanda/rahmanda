@@ -81,6 +81,21 @@ if ( ! function_exists( 'rahmanda_enqueue_blocks_script' ) ) {
 	}
 }
 
+add_action( 'init', 'rahmanda_blocks_set_script_translations' );
+
+if ( ! function_exists( 'rahmanda_blocks_set_script_translations' ) ) {
+	/**
+	 * Make blocks script translatable
+	 */
+	function rahmanda_blocks_set_script_translations() {
+		wp_set_script_translations( 
+			'rahmanda-blocks-js', 
+			'rahmanda',
+			get_template_directory_uri() . '/languages' 
+		);
+	}
+}
+
 if ( ! function_exists( 'rahmanda_applause_button_block_render_callback' ) ) {
 	function rahmanda_applause_button_block_render_callback($attributes, $content) {
 		$aligmentClass = isset($attributes['align']) ? 'd-flex justify-content-' . $attributes['align'] : 'd-flex justify-content-center';
