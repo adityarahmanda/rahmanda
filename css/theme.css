@@ -52,7 +52,7 @@
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: Mulish, var(--bs-font-sans-serif);
+  --bs-body-font-family: Mulish, Noto Sans Javanese, var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 2;
@@ -11766,6 +11766,190 @@ figure.wp-block-image {
   margin-right: 0;
 }
 
+.aksara-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 1rem;
+  -webkit-column-gap: 0.5rem;
+  -moz-column-gap: 0.5rem;
+  column-gap: 0.5rem;
+}
+.aksara-grid .aksara-grid-block {
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+}
+.aksara-grid.pada {
+  grid-template-columns: repeat(4, 1fr);
+}
+.aksara-grid.pada .name {
+  margin-top: 0;
+}
+.aksara-grid.pada .aksara-text {
+  font-size: 2rem;
+}
+
+.aksara-wrapper:first-child {
+  margin-left: 0;
+}
+.aksara-wrapper:last-child {
+  margin-right: 0;
+}
+
+.aksara-grid, .aksara-wrapper {
+  margin-bottom: 2rem;
+}
+.aksara-grid .name, .aksara-wrapper .name {
+  font-weight: 700;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 0.5rem;
+}
+.aksara-grid .aksara-text, .aksara-wrapper .aksara-text {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  line-height: 2;
+  margin-bottom: 1.5rem;
+}
+.aksara-grid .transliteration, .aksara-wrapper .transliteration {
+  font-weight: 700;
+}
+.aksara-grid .description, .aksara-wrapper .description {
+  font-size: 0.8rem;
+}
+.aksara-grid .transliteration, .aksara-grid .translation, .aksara-grid .description, .aksara-wrapper .transliteration, .aksara-wrapper .translation, .aksara-wrapper .description {
+  text-align: center;
+}
+.aksara-grid.sandangan .transliteration, .aksara-wrapper.sandangan .transliteration {
+  font-weight: 400;
+}
+.aksara-grid.sandangan .transliteration b, .aksara-wrapper.sandangan .transliteration b {
+  font-weight: 700;
+}
+.aksara-grid.sandangan .diacritic-top,
+.aksara-grid.sandangan .diacritic-left, .aksara-wrapper.sandangan .diacritic-top,
+.aksara-wrapper.sandangan .diacritic-left {
+  color: #dad6d2;
+}
+.aksara-grid.sandangan .diacritic-top::before,
+.aksara-grid.sandangan .diacritic-left::before, .aksara-wrapper.sandangan .diacritic-top::before,
+.aksara-wrapper.sandangan .diacritic-left::before {
+  color: #50585d;
+}
+.aksara-grid.sandangan .diacritic-below,
+.aksara-grid.sandangan .diacritic-right, .aksara-wrapper.sandangan .diacritic-below,
+.aksara-wrapper.sandangan .diacritic-right {
+  color: #50585d;
+}
+.aksara-grid.sandangan .diacritic-below::before,
+.aksara-grid.sandangan .diacritic-right::before, .aksara-wrapper.sandangan .diacritic-below::before,
+.aksara-wrapper.sandangan .diacritic-right::before {
+  color: #dad6d2;
+}
+
+.diacritic-top,
+.diacritic-below,
+.diacritic-right,
+.diacritic-left,
+.diacritic-left.diacritic-right {
+  position: relative;
+  display: inline-block;
+}
+
+.diacritic-top::before,
+.diacritic-below::before,
+.diacritic-right::before,
+.diacritic-left::before,
+.diacritic-left.diacritic-right::before,
+.diacritic-left.diacritic-right::after {
+  content: attr(data-content);
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  cursor: text;
+}
+
+.diacritic-top,
+.diacritic-left {
+  color: #50585d;
+}
+
+.diacritic-top::before,
+.diacritic-left::before {
+  color: #929ec9;
+}
+
+.diacritic-top::before {
+  height: 1.92rem;
+  width: 100%;
+}
+
+.diacritic-left::before {
+  width: 1.8rem;
+  height: 5.28rem;
+}
+
+.diacritic-below,
+.diacritic-right {
+  color: #929ec9;
+}
+
+.diacritic-below::before,
+.diacritic-right::before {
+  color: #50585d;
+}
+
+.diacritic-below::before {
+  width: 100%;
+  height: 3.264rem;
+}
+
+.diacritic-right::before,
+.diacritic-left.diacritic-right::before {
+  width: 100%;
+  height: 5.28rem;
+}
+
+.diacritic-left.diacritic-right::after {
+  width: 1.8rem;
+  height: 5.28rem;
+}
+
+@media (max-width: 575.98px) {
+  .aksara-grid.aksara-md-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .aksara-grid.pepadan {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .aksara-grid.pada .aksara-text {
+    font-size: 1.2rem;
+  }
+
+  .aksara-grid, .aksara-wrapper {
+    margin-bottom: 1.5rem;
+  }
+  .aksara-grid .name, .aksara-grid .transliteration, .aksara-grid .translation, .aksara-wrapper .name, .aksara-wrapper .transliteration, .aksara-wrapper .translation {
+    font-size: 0.8rem;
+  }
+  .aksara-grid .description, .aksara-wrapper .description {
+    font-size: 0.6rem;
+  }
+  .aksara-grid .aksara-text, .aksara-wrapper .aksara-text {
+    font-size: 1.6rem;
+  }
+}
 #wrapper-comments {
   position: relative;
 }

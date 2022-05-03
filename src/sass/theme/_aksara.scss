@@ -1,0 +1,209 @@
+.aksara-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: $spacer;
+    column-gap: $spacer * .5;
+
+    .aksara-grid-block {
+        position: relative;
+        display: flex;
+        flex-flow: column;
+    }
+
+    
+    &.pada {  
+        grid-template-columns: repeat(4, 1fr);
+
+        .name {
+            margin-top: 0;
+        }
+
+        .aksara-text {
+            font-size: 2rem;
+        }
+    }
+}
+
+.aksara-wrapper {
+    &:first-child {
+        margin-left: 0;
+    }
+    
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.aksara-grid, .aksara-wrapper {
+    margin-bottom: $spacer * 2;
+
+    .name {
+        font-weight: 700;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: $spacer * .5;
+    }
+    
+    .aksara-text {
+        display: flex;
+        justify-content: center;
+        font-size: $aksara-font-size;
+        line-height: $aksara-line-height;
+        margin-bottom: $spacer * 1.5;
+    }
+
+    .transliteration {
+        font-weight: $font-weight-bold;
+    }
+    
+    .description {
+        font-size: .8rem;
+    }
+
+    .transliteration, .translation, .description {
+        text-align: center;
+    }
+
+    &.sandangan {
+        .transliteration {
+            font-weight: $font-weight-normal;
+
+            b {
+                font-weight: $font-weight-bold;
+            }
+        }
+
+        // main color
+        .diacritic-top,
+        .diacritic-left {
+            color: #dad6d2;
+        }
+
+        // diacritic color
+        .diacritic-top::before,
+        .diacritic-left::before {
+            color: $gray-700;
+        }
+
+        // diacritic color
+        .diacritic-below,
+        .diacritic-right {
+            color: $gray-700;
+        }
+
+        // main color
+        .diacritic-below::before, 
+        .diacritic-right::before { 
+            color: #dad6d2;
+        }
+    }
+}
+
+.diacritic-top,
+.diacritic-below,
+.diacritic-right,
+.diacritic-left,
+.diacritic-left.diacritic-right {
+    position:relative;     
+    display:inline-block;
+}
+
+.diacritic-top::before,
+.diacritic-below::before,
+.diacritic-right::before,
+.diacritic-left::before,
+.diacritic-left.diacritic-right::before,
+.diacritic-left.diacritic-right::after {
+    content:attr(data-content);
+    position:absolute;
+    left:0;
+    top:0;   
+    overflow:hidden;
+    cursor: text;   
+}
+
+// main color
+.diacritic-top,
+.diacritic-left {
+    color: $gray-700;
+}
+
+// diacritic color
+.diacritic-top::before,
+.diacritic-left::before {
+    color: $primary;
+}
+
+.diacritic-top::before {
+    height: $aksara-baseline-top;
+    width: 100%;
+}
+
+.diacritic-left::before {
+    width: $aksara-diacritic-left-width;
+    height: $aksara-diacritic-left-right-height;
+}
+
+// diacritic color
+.diacritic-below,
+.diacritic-right {
+    color: $primary;
+}
+
+// main color
+.diacritic-below::before, 
+.diacritic-right::before { 
+    color: $gray-700;
+}
+
+.diacritic-below::before {
+    width:100%;
+    height: $aksara-baseline-bottom;
+}
+
+.diacritic-right::before,
+.diacritic-left.diacritic-right::before {
+    width: 100%;
+    height: $aksara-diacritic-left-right-height;
+}
+
+.diacritic-left.diacritic-right::after {
+    width: $aksara-diacritic-left-width;
+    height: $aksara-diacritic-left-right-height;
+}
+
+@include media-breakpoint-down(sm) {
+    .aksara-grid {
+        &.aksara-md-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        &.pepadan {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        
+        &.pada {
+            .aksara-text {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .aksara-grid, .aksara-wrapper {
+        margin-bottom: $spacer * 1.5;
+
+        .name, .transliteration, .translation {
+            font-size: .8rem;
+        }
+
+        .description {
+            font-size: .6rem;
+        }
+
+        .aksara-text {
+            font-size: $aksara-font-size-sm;
+        }
+    }
+}

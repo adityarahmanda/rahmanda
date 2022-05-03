@@ -69,3 +69,10 @@ if ( ! function_exists( 'rahmanda_components_social_menu' ) ) {
 		jetpack_social_menu();
 	}
 }
+
+add_filter( 'jetpack_sitemap_post_types', 'rahmanda_jetpack_sitemap_post_types' ); 
+ 
+function rahmanda_jetpack_sitemap_post_types( $post_types ) {
+    $post_types[] = 'work';
+    return $post_types; 
+}
