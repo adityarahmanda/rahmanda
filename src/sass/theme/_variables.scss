@@ -71,6 +71,8 @@ $blue-bell-700: shade-color($blue-bell, 40%) !default;
 $blue-bell-800: shade-color($blue-bell, 60%) !default;
 $blue-bell-900: shade-color($blue-bell, 80%) !default;
 
+$enable-cssgrid:              true !default;
+
 // Prefix for :root CSS variables
 
 $variable-prefix:             bs- !default;
@@ -182,17 +184,11 @@ $font-weight-bold:            700 !default;
 $font-weight-bolder:          900 !default;
 
 // scss-docs-start aksara-variables
-$aksara-font-size: 2.4rem;
-$aksara-font-size-sm: 1.6rem;
-$aksara-line-height: $line-height-base;
-$aksara-height: $aksara-line-height * $aksara-font-size;
-$aksara-height-sm: $aksara-line-height * $aksara-font-size-sm;
-$aksara-baseline-top: 40 / 100 * $aksara-height;
-$aksara-baseline-top-sm: 40 / 100 * $aksara-height-sm;
-$aksara-baseline-bottom: 68 / 100 * $aksara-height;
-$aksara-baseline-bottom-sm: 68 / 100 * $aksara-height-sm;
-$aksara-diacritic-left-width: 75 / 100 * $aksara-font-size;
-$aksara-diacritic-left-right-height: 110 / 100 * $aksara-height;
+$aksara-font-size-base:             2.4rem;
+$aksara-font-size-small:            2rem;
+$aksara-font-size-md-base:          1.6rem;
+$aksara-font-size-md-small:         1.2rem;
+$aksara-line-height:                $line-height-base;
 // scss-docs-end aksara variables
 
 // scss-docs-start headings-variables

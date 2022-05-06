@@ -1,0 +1,33 @@
+@mixin aksara-text($font-size) {
+    display: flex;
+    justify-content: center;
+    font-size: $font-size !important;
+    margin-bottom: $spacer * 1.5;
+
+    // aksara text variable
+    $aksara-height: $aksara-line-height * $font-size;    
+
+    .diacritic-top::before {
+        height: 40 / 100 * $aksara-height !important;
+    }
+
+    .diacritic-below::before {
+        height: 68 / 100 * $aksara-height !important;
+    }
+
+    .diacritic-left::before,
+    .diacritic-left.diacritic-right::after {
+        width: 75 / 100 * $font-size !important;
+    }
+
+    .diacritic-right::before,
+    .diacritic-left::before,
+    .diacritic-left.diacritic-right::before, 
+    .diacritic-left.diacritic-right::after {
+        height: 110 / 100 * $aksara-height !important;
+    }
+
+    .diacritic-left.diacritic-right::before {
+        width: 100% !important; 
+    }
+}

@@ -1,9 +1,34 @@
-// Grab our child theme variables and bootstrap style
+// Override bootstrap core with the theme style
+@import "assets/bootstrap5/functions";
 @import "theme/variables";
-@import "assets/bootstrap5/bootstrap";
-
-// Grab our child theme mixins
+@import "assets/bootstrap5/variables";
 @import "theme/mixins";
+@import "assets/bootstrap5/mixins";
+@import "theme/utilities";
+@import "assets/bootstrap5/utilities";
+
+// Bootstrap 5 Layout & components
+@import "assets/bootstrap5/root";
+@import "assets/bootstrap5/reboot";
+@import "assets/bootstrap5/type";
+@import "assets/bootstrap5/images";
+@import "assets/bootstrap5/containers";
+@import "assets/bootstrap5/grid";
+@import "assets/bootstrap5/tables";
+@import "assets/bootstrap5/forms";
+@import "assets/bootstrap5/buttons";
+@import "assets/bootstrap5/transitions";
+@import "assets/bootstrap5/dropdown";
+@import "assets/bootstrap5/button-group";
+@import "assets/bootstrap5/nav";
+@import "assets/bootstrap5/navbar";
+@import "assets/bootstrap5/pagination";
+@import "assets/bootstrap5/list-group";
+@import "assets/bootstrap5/close";
+@import "assets/bootstrap5/offcanvas";
+@import "assets/bootstrap5/placeholders";
+@import "assets/bootstrap5/helpers";
+@import "assets/bootstrap5/utilities/api";
 
 // replace default bootstrap class 
 @import "theme/reboot";

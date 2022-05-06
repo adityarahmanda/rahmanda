@@ -1,0 +1,44 @@
+// stylelint-disable indentation
+
+// Utilities
+$utilities: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$utilities: map-merge(
+  (
+    // scss-docs-start utils-overflow
+    "overflow": (
+        responsive: true,
+        property: overflow,
+        values: auto hidden visible scroll,
+    ),
+    // scss-docs-end utils-overflow
+    // scss-docs-start utils-overflow-x
+    "overflow-x": (
+        responsive: true,
+        property: overflow-x,
+        values: auto hidden visible scroll,
+    ),
+    // scss-docs-end utils-overflow-x
+    // scss-docs-start utils-overflow-y
+    "overflow-y": (
+        responsive: true,
+        property: overflow-y,
+        values: auto hidden visible scroll,
+      ),
+    // scss-docs-end utils-overflow-y  
+    // scss-docs-start utils-grid-col
+    "grid-col": (
+        responsive: true,
+        property: grid-template-columns,
+        values: (
+            5: repeat(5, 1fr),
+            4: repeat(4, 1fr),
+            3: repeat(3, 1fr),
+            2: repeat(2, 1fr),
+            1: repeat(1, 1fr),
+        )
+    ),  
+    // scss-docs-end utils-grid-col
+  ),
+  $utilities
+);

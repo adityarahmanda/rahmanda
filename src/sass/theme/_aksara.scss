@@ -1,83 +1,108 @@
-.aksara-grid {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    row-gap: $spacer;
-    column-gap: $spacer * .5;
-
-    .aksara-grid-block {
-        position: relative;
-        display: flex;
-        flex-flow: column;
-    }
-
-    
-    &.pada {  
-        grid-template-columns: repeat(4, 1fr);
-
-        .name {
-            margin-top: 0;
-        }
-
-        .aksara-text {
-            font-size: 2rem;
-        }
-    }
-}
-
 .aksara-wrapper {
-    &:first-child {
-        margin-left: 0;
-    }
-    
-    &:last-child {
-        margin-right: 0;
-    }
-}
+    position: relative;
+    margin-bottom: $spacer * 1.5;
 
-.aksara-grid, .aksara-wrapper {
-    margin-bottom: $spacer * 2;
-
-    .name {
-        font-weight: 700;
+    .aksara-name, .aksara-transliteration, .aksara-description, .aksara-translation {
         text-align: center;
-        margin-top: auto;
-        margin-bottom: $spacer * .5;
-    }
-    
-    .aksara-text {
-        display: flex;
-        justify-content: center;
-        font-size: $aksara-font-size;
-        line-height: $aksara-line-height;
-        margin-bottom: $spacer * 1.5;
     }
 
-    .transliteration {
+    .aksara-name, .aksara-transliteration {
         font-weight: $font-weight-bold;
     }
     
-    .description {
-        font-size: .8rem;
+    .aksara-description {
+        font-size: $font-size-sm;
     }
 
-    .transliteration, .translation, .description {
-        text-align: center;
+    .aksara-text {
+        @include aksara-text($aksara-font-size-base);
     }
 
-    &.sandangan {
-        .transliteration {
+    .aksara-text-small {
+        @include aksara-text($aksara-font-size-small);
+    }
+    
+    .aksara-example {
+        display: inline-block;
+        margin: 0 $spacer * 1.5;
+    }
+
+    .aksara-example:first-child {
+        margin-left: 0 !important;
+    }
+
+    .aksara-example:last-child {
+        margin-right: 0 !important;
+    }
+
+    .diacritic-top,
+    .diacritic-below,
+    .diacritic-right,
+    .diacritic-left,
+    .diacritic-left.diacritic-right {
+        position:relative;     
+        display:inline-block;
+    }
+
+    .diacritic-top::before,
+    .diacritic-below::before,
+    .diacritic-right::before,
+    .diacritic-left::before,
+    .diacritic-left.diacritic-right::before,
+    .diacritic-left.diacritic-right::after {
+        content:attr(data-content);
+        position:absolute;
+        left:0;
+        top:0;   
+        overflow:hidden;
+        cursor: text;   
+    }
+
+    .diacritic-top::before,
+    .diacritic-below::before,
+    .diacritic-right::before,
+    .diacritic-left.diacritic-right::before {
+        width: 100%; 
+    }
+
+    // main color
+    .diacritic-top,
+    .diacritic-left {
+        color: $gray-700;
+    }
+
+    // diacritic color
+    .diacritic-top::before,
+    .diacritic-left::before {
+        color: $primary;
+    }
+
+    // diacritic color
+    .diacritic-below,
+    .diacritic-right {
+        color: $primary;
+    }
+
+    // main color
+    .diacritic-below::before, 
+    .diacritic-right::before { 
+        color: $gray-700;
+    }
+
+    &.grid {
+        column-gap: 0;
+        row-gap: $spacer;
+    }
+
+    &.wrapper-sandangan {
+        .aksara-transliteration {
             font-weight: $font-weight-normal;
-
-            b {
-                font-weight: $font-weight-bold;
-            }
         }
 
         // main color
         .diacritic-top,
         .diacritic-left {
-            color: #dad6d2;
+            color: $gray-300;
         }
 
         // diacritic color
@@ -95,115 +120,25 @@
         // main color
         .diacritic-below::before, 
         .diacritic-right::before { 
-            color: #dad6d2;
+            color: $gray-300;
         }
     }
 }
 
-.diacritic-top,
-.diacritic-below,
-.diacritic-right,
-.diacritic-left,
-.diacritic-left.diacritic-right {
-    position:relative;     
-    display:inline-block;
-}
-
-.diacritic-top::before,
-.diacritic-below::before,
-.diacritic-right::before,
-.diacritic-left::before,
-.diacritic-left.diacritic-right::before,
-.diacritic-left.diacritic-right::after {
-    content:attr(data-content);
-    position:absolute;
-    left:0;
-    top:0;   
-    overflow:hidden;
-    cursor: text;   
-}
-
-// main color
-.diacritic-top,
-.diacritic-left {
-    color: $gray-700;
-}
-
-// diacritic color
-.diacritic-top::before,
-.diacritic-left::before {
-    color: $primary;
-}
-
-.diacritic-top::before {
-    height: $aksara-baseline-top;
-    width: 100%;
-}
-
-.diacritic-left::before {
-    width: $aksara-diacritic-left-width;
-    height: $aksara-diacritic-left-right-height;
-}
-
-// diacritic color
-.diacritic-below,
-.diacritic-right {
-    color: $primary;
-}
-
-// main color
-.diacritic-below::before, 
-.diacritic-right::before { 
-    color: $gray-700;
-}
-
-.diacritic-below::before {
-    width:100%;
-    height: $aksara-baseline-bottom;
-}
-
-.diacritic-right::before,
-.diacritic-left.diacritic-right::before {
-    width: 100%;
-    height: $aksara-diacritic-left-right-height;
-}
-
-.diacritic-left.diacritic-right::after {
-    width: $aksara-diacritic-left-width;
-    height: $aksara-diacritic-left-right-height;
-}
-
-@include media-breakpoint-down(sm) {
-    .aksara-grid {
-        &.aksara-md-grid {
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        &.pepadan {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        
-        &.pada {
-            .aksara-text {
-                font-size: 1.2rem;
-            }
-        }
-    }
-
-    .aksara-grid, .aksara-wrapper {
-        margin-bottom: $spacer * 1.5;
-
-        .name, .transliteration, .translation {
-            font-size: .8rem;
-        }
-
-        .description {
-            font-size: .6rem;
-        }
+@include media-breakpoint-down(md) {
+    .aksara-wrapper {
+        font-size: $font-size-sm;
 
         .aksara-text {
-            font-size: $aksara-font-size-sm;
+            @include aksara-text($aksara-font-size-md-base);
+        }
+
+        .aksara-text-small {
+            @include aksara-text($aksara-font-size-md-small);
+        }
+
+        .aksara-example {
+            margin: 0 $spacer;
         }
     }
 }

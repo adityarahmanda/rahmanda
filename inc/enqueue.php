@@ -23,8 +23,8 @@ if ( ! function_exists( 'rahmanda_scripts' ) ) {
 		$theme_scripts = "/js/theme{$suffix}.js";
 
 		$css_version = $theme_version . '.' . filemtime( get_template_directory() . $theme_styles );
-		wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&display=swap', false );
-		wp_enqueue_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css', false );
+		wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&family=Noto+Sans+Javanese:wght@400;700&display=swap', array(), null );
+		wp_enqueue_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css', array(), null );
 		wp_enqueue_style( 'rahmanda-styles', get_template_directory_uri() . $theme_styles, array(), $css_version );
 		
 		wp_enqueue_script( 'jquery' );
